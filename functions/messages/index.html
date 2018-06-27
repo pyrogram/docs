@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Messages &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/functions/messages/index.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AcceptEncryption" href="AcceptEncryption.html" />
+    <link rel="prev" title="SetSecureValueErrors" href="../users/SetSecureValueErrors.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Functions</a> &raquo;</li>
+        
+      <li>Messages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyrogram.api.functions.messages">
+<span id="messages"></span><h1>Messages<a class="headerlink" href="#module-pyrogram.api.functions.messages" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AcceptEncryption.html">AcceptEncryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AddChatUser.html">AddChatUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CheckChatInvite.html">CheckChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClearRecentStickers.html">ClearRecentStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CreateChat.html">CreateChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeleteChatUser.html">DeleteChatUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeleteHistory.html">DeleteHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeleteMessages.html">DeleteMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DiscardEncryption.html">DiscardEncryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EditChatAdmin.html">EditChatAdmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EditChatPhoto.html">EditChatPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EditChatTitle.html">EditChatTitle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EditInlineBotMessage.html">EditInlineBotMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EditMessage.html">EditMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExportChatInvite.html">ExportChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FaveSticker.html">FaveSticker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForwardMessages.html">ForwardMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetAllChats.html">GetAllChats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetAllDrafts.html">GetAllDrafts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetAllStickers.html">GetAllStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetArchivedStickers.html">GetArchivedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetAttachedStickers.html">GetAttachedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetBotCallbackAnswer.html">GetBotCallbackAnswer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetChats.html">GetChats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetCommonChats.html">GetCommonChats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetDhConfig.html">GetDhConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetDialogs.html">GetDialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetDocumentByHash.html">GetDocumentByHash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetFavedStickers.html">GetFavedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetFeaturedStickers.html">GetFeaturedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetFullChat.html">GetFullChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetGameHighScores.html">GetGameHighScores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetHistory.html">GetHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetInlineBotResults.html">GetInlineBotResults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetInlineGameHighScores.html">GetInlineGameHighScores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetMaskStickers.html">GetMaskStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetMessageEditData.html">GetMessageEditData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetMessages.html">GetMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetMessagesViews.html">GetMessagesViews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetPeerDialogs.html">GetPeerDialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetPeerSettings.html">GetPeerSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetPinnedDialogs.html">GetPinnedDialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetRecentLocations.html">GetRecentLocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetRecentStickers.html">GetRecentStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetSavedGifs.html">GetSavedGifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetStickerSet.html">GetStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetStickers.html">GetStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetUnreadMentions.html">GetUnreadMentions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetWebPage.html">GetWebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GetWebPagePreview.html">GetWebPagePreview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HideReportSpam.html">HideReportSpam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportChatInvite.html">ImportChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallStickerSet.html">InstallStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MigrateChat.html">MigrateChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadEncryptedHistory.html">ReadEncryptedHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadFeaturedStickers.html">ReadFeaturedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadHistory.html">ReadHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadMentions.html">ReadMentions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadMessageContents.html">ReadMessageContents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReceivedMessages.html">ReceivedMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReceivedQueue.html">ReceivedQueue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReorderPinnedDialogs.html">ReorderPinnedDialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReorderStickerSets.html">ReorderStickerSets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Report.html">Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReportEncryptedSpam.html">ReportEncryptedSpam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReportSpam.html">ReportSpam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RequestEncryption.html">RequestEncryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SaveDraft.html">SaveDraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SaveGif.html">SaveGif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SaveRecentSticker.html">SaveRecentSticker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SearchGifs.html">SearchGifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SearchGlobal.html">SearchGlobal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SearchStickerSets.html">SearchStickerSets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendEncrypted.html">SendEncrypted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendEncryptedFile.html">SendEncryptedFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendEncryptedService.html">SendEncryptedService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendInlineBotResult.html">SendInlineBotResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMedia.html">SendMedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessage.html">SendMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMultiMedia.html">SendMultiMedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendScreenshotNotification.html">SendScreenshotNotification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetBotCallbackAnswer.html">SetBotCallbackAnswer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetBotPrecheckoutResults.html">SetBotPrecheckoutResults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetBotShippingResults.html">SetBotShippingResults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetEncryptedTyping.html">SetEncryptedTyping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetGameScore.html">SetGameScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetInlineBotResults.html">SetInlineBotResults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetInlineGameScore.html">SetInlineGameScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetTyping.html">SetTyping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StartBot.html">StartBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToggleChatAdmins.html">ToggleChatAdmins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToggleDialogPin.html">ToggleDialogPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UninstallStickerSet.html">UninstallStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UploadEncryptedFile.html">UploadEncryptedFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UploadMedia.html">UploadMedia</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="AcceptEncryption.html" class="btn btn-neutral float-right" title="AcceptEncryption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../users/SetSecureValueErrors.html" class="btn btn-neutral" title="SetSecureValueErrors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

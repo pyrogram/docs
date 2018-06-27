@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Error Handling &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/resources/ErrorHandling.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pyrogram" href="../pyrogram/index.html" />
+    <link rel="prev" title="Bots Interaction" href="BotsInteraction.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Error Handling</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="error-handling">
+<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
+<p>Errors are inevitable when working with the API, and they must be correctly handled by
+the use of <code class="docutils literal"><span class="pre">try..except</span></code> blocks.</p>
+<p>There are many errors that Telegram could return, but they all fall in one of these five exception categories
+(which are in turn children of the <a class="reference internal" href="../pyrogram/Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-obj docutils literal"><span class="pre">pyrogram.Error</span></code></a> superclass)</p>
+<ul class="simple">
+<li><a class="reference internal" href="../errors/SeeOther.html#module-pyrogram.api.errors.SeeOther" title="pyrogram.api.errors.SeeOther"><code class="xref py py-obj docutils literal"><span class="pre">303</span> <span class="pre">See</span> <span class="pre">Other</span></code></a></li>
+<li><a class="reference internal" href="../errors/BadRequest.html#module-pyrogram.api.errors.BadRequest" title="pyrogram.api.errors.BadRequest"><code class="xref py py-obj docutils literal"><span class="pre">400</span> <span class="pre">Bad</span> <span class="pre">Request</span></code></a></li>
+<li><a class="reference internal" href="../errors/Unauthorized.html#module-pyrogram.api.errors.Unauthorized" title="pyrogram.api.errors.Unauthorized"><code class="xref py py-obj docutils literal"><span class="pre">401</span> <span class="pre">Unauthorized</span></code></a></li>
+<li><a class="reference internal" href="../errors/Flood.html#module-pyrogram.api.errors.Flood" title="pyrogram.api.errors.Flood"><code class="xref py py-obj docutils literal"><span class="pre">420</span> <span class="pre">Flood</span></code></a></li>
+<li><a class="reference internal" href="../errors/InternalServerError.html#module-pyrogram.api.errors.InternalServerError" title="pyrogram.api.errors.InternalServerError"><code class="xref py py-obj docutils literal"><span class="pre">500</span> <span class="pre">Internal</span> <span class="pre">Server</span> <span class="pre">Error</span></code></a></li>
+</ul>
+<p>As stated above, there are really many (too many) errors, and in case Pyrogram does not know anything yet about a
+specific one, it raises a special <a class="reference internal" href="../errors/UnknownError.html#module-pyrogram.api.errors.UnknownError" title="pyrogram.api.errors.UnknownError"><code class="xref py py-obj docutils literal"><span class="pre">520</span> <span class="pre">Unknown</span> <span class="pre">Error</span></code></a> exception and logs it
+in the <code class="docutils literal"><span class="pre">unknown_errors.txt</span></code> file. Users are invited to report these unknown errors; in later versions of Pyrogram
+some kind of automatic error reporting module might be implemented.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram.api.errors</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BadRequest</span><span class="p">,</span> <span class="n">Flood</span><span class="p">,</span> <span class="n">InternalServerError</span><span class="p">,</span>
+    <span class="n">SeeOther</span><span class="p">,</span> <span class="n">Unauthorized</span><span class="p">,</span> <span class="n">UnknownError</span>
+<span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">BadRequest</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">Flood</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">InternalServerError</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">SeeOther</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">Unauthorized</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">UnknownError</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Exception objects may also contain some informative values.
+E.g.: <a class="reference internal" href="../errors/Flood.html#pyrogram.api.errors.exceptions.flood_420.FloodWait" title="pyrogram.api.errors.exceptions.flood_420.FloodWait"><code class="xref py py-obj docutils literal"><span class="pre">FloodWait</span></code></a> holds the amount of seconds you have to wait
+before you can try again. The value is always stored in the <code class="docutils literal"><span class="pre">x</span></code> field of the returned exception object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pyrogram.api.errors</span> <span class="kn">import</span> <span class="n">FloodWait</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">FloodWait</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>TODO: Better explanation on how to deal with exceptions</strong></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pyrogram/index.html" class="btn btn-neutral float-right" title="Pyrogram" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="BotsInteraction.html" class="btn btn-neutral" title="Bots Interaction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

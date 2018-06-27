@@ -1,0 +1,10 @@
+Langpack
+========
+
+.. module:: pyrogram.api.functions.langpack
+
+.. toctree::
+    GetDifference
+    GetLangPack
+    GetLanguages
+    GetStrings

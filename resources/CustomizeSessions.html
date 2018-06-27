@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customize Sessions &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/resources/CustomizeSessions.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TgCrypto" href="TgCrypto.html" />
+    <link rel="prev" title="Auto Authorization" href="AutoAuthorization.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Customize Sessions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="customize-sessions">
+<h1>Customize Sessions<a class="headerlink" href="#customize-sessions" title="Permalink to this headline">¶</a></h1>
+<p>As you may probably know, Telegram allows Users (and Bots) having more than one session (authorizations) registered
+in the system at the same time.</p>
+<p>Briefly explaining, sessions are simply new logins in your account. They can be reviewed in the settings of an official
+app (or by invoking <a class="reference external" href="../functions/account/GetAuthorizations.html">GetAuthorizations</a> with Pyrogram) and store some useful
+information about the client who generated them.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="https://i.imgur.com/lzGPCdZ.png"><img alt="https://i.imgur.com/lzGPCdZ.png" src="https://i.imgur.com/lzGPCdZ.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">A Pyrogram session running on Linux, Python 3.6.</span></p>
+</div>
+<p>That’s how a session looks like on the Android app, showing the three main pieces of information.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">app_version</span></code>: <strong>Pyrogram 🔥 0.7.5</strong></li>
+<li><code class="docutils literal"><span class="pre">device_model</span></code>: <strong>CPython 3.6.5</strong></li>
+<li><code class="docutils literal"><span class="pre">system_version</span></code>: <strong>Linux 4.15.0-23-generic</strong></li>
+</ul>
+<div class="section" id="set-custom-values">
+<h2>Set Custom Values<a class="headerlink" href="#set-custom-values" title="Permalink to this headline">¶</a></h2>
+<p>To set custom values, you can either make use of the <code class="docutils literal"><span class="pre">config.ini</span></code> file, this way:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[pyrogram]</span>
+<span class="na">app_version</span> <span class="o">=</span> <span class="s">1.2.3</span>
+<span class="na">device_model</span> <span class="o">=</span> <span class="s">PC</span>
+<span class="na">system_version</span> <span class="o">=</span> <span class="s">Linux</span>
+</pre></div>
+</div>
+<p>Or, pass the arguments directly in the Client’s constructor.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+    <span class="s2">&quot;my_account&quot;</span><span class="p">,</span>
+    <span class="n">app_version</span><span class="o">=</span><span class="s2">&quot;1.2.3&quot;</span><span class="p">,</span>
+    <span class="n">device_model</span><span class="o">=</span><span class="s2">&quot;PC&quot;</span><span class="p">,</span>
+    <span class="n">system_version</span><span class="o">=</span><span class="s2">&quot;Linux&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-custom-languages">
+<h2>Set Custom Languages<a class="headerlink" href="#set-custom-languages" title="Permalink to this headline">¶</a></h2>
+<p>To tell Telegram in which language should speak to you (terms of service, bots, service messages, …) you can
+set <code class="docutils literal"><span class="pre">lang_code</span></code> in <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard (defaults to “en”,
+English).</p>
+<p>With the following code we make Telegram know we want it to speak in Italian (it):</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[pyrogram]</span>
+<span class="na">lang_code</span> <span class="o">=</span> <span class="s">it</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+    <span class="s2">&quot;my_account&quot;</span><span class="p">,</span>
+    <span class="n">lang_code</span><span class="o">=</span><span class="s2">&quot;it&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TgCrypto.html" class="btn btn-neutral float-right" title="TgCrypto" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="AutoAuthorization.html" class="btn btn-neutral" title="Auto Authorization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

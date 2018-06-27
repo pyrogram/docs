@@ -1,0 +1,5 @@
+PagePart
+========
+
+.. autoclass:: pyrogram.api.types.PagePart
+    :members:

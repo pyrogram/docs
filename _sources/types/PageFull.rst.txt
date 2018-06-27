@@ -1,0 +1,5 @@
+PageFull
+========
+
+.. autoclass:: pyrogram.api.types.PageFull
+    :members:

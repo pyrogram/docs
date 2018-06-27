@@ -1,0 +1,21 @@
+Contacts
+========
+
+.. module:: pyrogram.api.functions.contacts
+
+.. toctree::
+    Block
+    DeleteContact
+    DeleteContacts
+    ExportCard
+    GetBlocked
+    GetContacts
+    GetStatuses
+    GetTopPeers
+    ImportCard
+    ImportContacts
+    ResetSaved
+    ResetTopPeerRating
+    ResolveUsername
+    Search
+    Unblock

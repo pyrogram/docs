@@ -1,0 +1,20 @@
+Help
+====
+
+.. module:: pyrogram.api.functions.help
+
+.. toctree::
+    AcceptTermsOfService
+    GetAppChangelog
+    GetAppUpdate
+    GetCdnConfig
+    GetConfig
+    GetDeepLinkInfo
+    GetInviteText
+    GetNearestDc
+    GetProxyData
+    GetRecentMeUrls
+    GetSupport
+    GetTermsOfServiceUpdate
+    SaveAppLog
+    SetBotUpdatesStatus

@@ -1,0 +1,39 @@
+:tocdepth: 1
+
+Functions
+=========
+
+.. module:: pyrogram.api.functions
+
+.. toctree::
+    account/index
+    contacts/index
+    bots/index
+    langpack/index
+    auth/index
+    stickers/index
+    channels/index
+    upload/index
+    help/index
+    photos/index
+    phone/index
+    payments/index
+    updates/index
+    users/index
+    messages/index
+    contest/index
+    DestroyAuthKey
+    DestroySession
+    GetFutureSalts
+    InitConnection
+    InvokeAfterMsg
+    InvokeAfterMsgs
+    InvokeWithLayer
+    InvokeWithoutUpdates
+    Ping
+    PingDelayDisconnect
+    ReqDHParams
+    ReqPq
+    ReqPqMulti
+    RpcDropAnswer
+    SetClientDHParams

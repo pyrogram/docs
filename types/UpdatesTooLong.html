@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UpdatesTooLong &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/types/UpdatesTooLong.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User" href="User.html" />
+    <link rel="prev" title="UpdatesCombined" href="UpdatesCombined.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Types</a> &raquo;</li>
+        
+      <li>UpdatesTooLong</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="updatestoolong">
+<h1>UpdatesTooLong<a class="headerlink" href="#updatestoolong" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyrogram.api.types.UpdatesTooLong">
+<em class="property">class </em><code class="descclassname">pyrogram.api.types.</code><code class="descname">UpdatesTooLong</code><a class="headerlink" href="#pyrogram.api.types.UpdatesTooLong" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="pyrogram.api.types.UpdatesTooLong.ID">
+<code class="descname">ID</code><a class="headerlink" href="#pyrogram.api.types.UpdatesTooLong.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">0xe317af7e</span></code></p>
+</dd></dl>
+
+<p>No parameters required.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">This object can be returned by <a class="reference internal" href="../functions/messages/SendMessage.html#pyrogram.api.functions.messages.SendMessage" title="pyrogram.api.functions.messages.SendMessage"><code class="xref py py-obj docutils literal"><span class="pre">messages.SendMessage</span></code></a>, <a class="reference internal" href="../functions/messages/SendMedia.html#pyrogram.api.functions.messages.SendMedia" title="pyrogram.api.functions.messages.SendMedia"><code class="xref py py-obj docutils literal"><span class="pre">messages.SendMedia</span></code></a>, <a class="reference internal" href="../functions/messages/ForwardMessages.html#pyrogram.api.functions.messages.ForwardMessages" title="pyrogram.api.functions.messages.ForwardMessages"><code class="xref py py-obj docutils literal"><span class="pre">messages.ForwardMessages</span></code></a>, <a class="reference internal" href="../functions/messages/EditChatTitle.html#pyrogram.api.functions.messages.EditChatTitle" title="pyrogram.api.functions.messages.EditChatTitle"><code class="xref py py-obj docutils literal"><span class="pre">messages.EditChatTitle</span></code></a>, <a class="reference internal" href="../functions/messages/EditChatPhoto.html#pyrogram.api.functions.messages.EditChatPhoto" title="pyrogram.api.functions.messages.EditChatPhoto"><code class="xref py py-obj docutils literal"><span class="pre">messages.EditChatPhoto</span></code></a>, <a class="reference internal" href="../functions/messages/AddChatUser.html#pyrogram.api.functions.messages.AddChatUser" title="pyrogram.api.functions.messages.AddChatUser"><code class="xref py py-obj docutils literal"><span class="pre">messages.AddChatUser</span></code></a>, <a class="reference internal" href="../functions/messages/DeleteChatUser.html#pyrogram.api.functions.messages.DeleteChatUser" title="pyrogram.api.functions.messages.DeleteChatUser"><code class="xref py py-obj docutils literal"><span class="pre">messages.DeleteChatUser</span></code></a>, <a class="reference internal" href="../functions/messages/CreateChat.html#pyrogram.api.functions.messages.CreateChat" title="pyrogram.api.functions.messages.CreateChat"><code class="xref py py-obj docutils literal"><span class="pre">messages.CreateChat</span></code></a>, <a class="reference internal" href="../functions/messages/ImportChatInvite.html#pyrogram.api.functions.messages.ImportChatInvite" title="pyrogram.api.functions.messages.ImportChatInvite"><code class="xref py py-obj docutils literal"><span class="pre">messages.ImportChatInvite</span></code></a>, <a class="reference internal" href="../functions/messages/StartBot.html#pyrogram.api.functions.messages.StartBot" title="pyrogram.api.functions.messages.StartBot"><code class="xref py py-obj docutils literal"><span class="pre">messages.StartBot</span></code></a>, <a class="reference internal" href="../functions/messages/ToggleChatAdmins.html#pyrogram.api.functions.messages.ToggleChatAdmins" title="pyrogram.api.functions.messages.ToggleChatAdmins"><code class="xref py py-obj docutils literal"><span class="pre">messages.ToggleChatAdmins</span></code></a>, <a class="reference internal" href="../functions/messages/MigrateChat.html#pyrogram.api.functions.messages.MigrateChat" title="pyrogram.api.functions.messages.MigrateChat"><code class="xref py py-obj docutils literal"><span class="pre">messages.MigrateChat</span></code></a>, <a class="reference internal" href="../functions/messages/SendInlineBotResult.html#pyrogram.api.functions.messages.SendInlineBotResult" title="pyrogram.api.functions.messages.SendInlineBotResult"><code class="xref py py-obj docutils literal"><span class="pre">messages.SendInlineBotResult</span></code></a>, <a class="reference internal" href="../functions/messages/EditMessage.html#pyrogram.api.functions.messages.EditMessage" title="pyrogram.api.functions.messages.EditMessage"><code class="xref py py-obj docutils literal"><span class="pre">messages.EditMessage</span></code></a>, <a class="reference internal" href="../functions/messages/GetAllDrafts.html#pyrogram.api.functions.messages.GetAllDrafts" title="pyrogram.api.functions.messages.GetAllDrafts"><code class="xref py py-obj docutils literal"><span class="pre">messages.GetAllDrafts</span></code></a>, <a class="reference internal" href="../functions/messages/SetGameScore.html#pyrogram.api.functions.messages.SetGameScore" title="pyrogram.api.functions.messages.SetGameScore"><code class="xref py py-obj docutils literal"><span class="pre">messages.SetGameScore</span></code></a>, <a class="reference internal" href="../functions/messages/SendScreenshotNotification.html#pyrogram.api.functions.messages.SendScreenshotNotification" title="pyrogram.api.functions.messages.SendScreenshotNotification"><code class="xref py py-obj docutils literal"><span class="pre">messages.SendScreenshotNotification</span></code></a>, <a class="reference internal" href="../functions/messages/SendMultiMedia.html#pyrogram.api.functions.messages.SendMultiMedia" title="pyrogram.api.functions.messages.SendMultiMedia"><code class="xref py py-obj docutils literal"><span class="pre">messages.SendMultiMedia</span></code></a>, <a class="reference internal" href="../functions/help/GetAppChangelog.html#pyrogram.api.functions.help.GetAppChangelog" title="pyrogram.api.functions.help.GetAppChangelog"><code class="xref py py-obj docutils literal"><span class="pre">help.GetAppChangelog</span></code></a>, <a class="reference internal" href="../functions/channels/CreateChannel.html#pyrogram.api.functions.channels.CreateChannel" title="pyrogram.api.functions.channels.CreateChannel"><code class="xref py py-obj docutils literal"><span class="pre">channels.CreateChannel</span></code></a>, <a class="reference internal" href="../functions/channels/EditAdmin.html#pyrogram.api.functions.channels.EditAdmin" title="pyrogram.api.functions.channels.EditAdmin"><code class="xref py py-obj docutils literal"><span class="pre">channels.EditAdmin</span></code></a>, <a class="reference internal" href="../functions/channels/EditTitle.html#pyrogram.api.functions.channels.EditTitle" title="pyrogram.api.functions.channels.EditTitle"><code class="xref py py-obj docutils literal"><span class="pre">channels.EditTitle</span></code></a>, <a class="reference internal" href="../functions/channels/EditPhoto.html#pyrogram.api.functions.channels.EditPhoto" title="pyrogram.api.functions.channels.EditPhoto"><code class="xref py py-obj docutils literal"><span class="pre">channels.EditPhoto</span></code></a>, <a class="reference internal" href="../functions/channels/JoinChannel.html#pyrogram.api.functions.channels.JoinChannel" title="pyrogram.api.functions.channels.JoinChannel"><code class="xref py py-obj docutils literal"><span class="pre">channels.JoinChannel</span></code></a>, <a class="reference internal" href="../functions/channels/LeaveChannel.html#pyrogram.api.functions.channels.LeaveChannel" title="pyrogram.api.functions.channels.LeaveChannel"><code class="xref py py-obj docutils literal"><span class="pre">channels.LeaveChannel</span></code></a>, <a class="reference internal" href="../functions/channels/InviteToChannel.html#pyrogram.api.functions.channels.InviteToChannel" title="pyrogram.api.functions.channels.InviteToChannel"><code class="xref py py-obj docutils literal"><span class="pre">channels.InviteToChannel</span></code></a>, <a class="reference internal" href="../functions/channels/DeleteChannel.html#pyrogram.api.functions.channels.DeleteChannel" title="pyrogram.api.functions.channels.DeleteChannel"><code class="xref py py-obj docutils literal"><span class="pre">channels.DeleteChannel</span></code></a>, <a class="reference internal" href="../functions/channels/ToggleInvites.html#pyrogram.api.functions.channels.ToggleInvites" title="pyrogram.api.functions.channels.ToggleInvites"><code class="xref py py-obj docutils literal"><span class="pre">channels.ToggleInvites</span></code></a>, <a class="reference internal" href="../functions/channels/ToggleSignatures.html#pyrogram.api.functions.channels.ToggleSignatures" title="pyrogram.api.functions.channels.ToggleSignatures"><code class="xref py py-obj docutils literal"><span class="pre">channels.ToggleSignatures</span></code></a>, <a class="reference internal" href="../functions/channels/UpdatePinnedMessage.html#pyrogram.api.functions.channels.UpdatePinnedMessage" title="pyrogram.api.functions.channels.UpdatePinnedMessage"><code class="xref py py-obj docutils literal"><span class="pre">channels.UpdatePinnedMessage</span></code></a>, <a class="reference internal" href="../functions/channels/EditBanned.html#pyrogram.api.functions.channels.EditBanned" title="pyrogram.api.functions.channels.EditBanned"><code class="xref py py-obj docutils literal"><span class="pre">channels.EditBanned</span></code></a>, <a class="reference internal" href="../functions/channels/TogglePreHistoryHidden.html#pyrogram.api.functions.channels.TogglePreHistoryHidden" title="pyrogram.api.functions.channels.TogglePreHistoryHidden"><code class="xref py py-obj docutils literal"><span class="pre">channels.TogglePreHistoryHidden</span></code></a>, <a class="reference internal" href="../functions/phone/DiscardCall.html#pyrogram.api.functions.phone.DiscardCall" title="pyrogram.api.functions.phone.DiscardCall"><code class="xref py py-obj docutils literal"><span class="pre">phone.DiscardCall</span></code></a> and <a class="reference internal" href="../functions/phone/SetCallRating.html#pyrogram.api.functions.phone.SetCallRating" title="pyrogram.api.functions.phone.SetCallRating"><code class="xref py py-obj docutils literal"><span class="pre">phone.SetCallRating</span></code></a>.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="User.html" class="btn btn-neutral float-right" title="User" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="UpdatesCombined.html" class="btn btn-neutral" title="UpdatesCombined" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

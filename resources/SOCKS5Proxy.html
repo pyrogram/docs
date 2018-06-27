@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SOCKS5 Proxy &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/resources/SOCKS5Proxy.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bots Interaction" href="BotsInteraction.html" />
+    <link rel="prev" title="Text Formatting" href="TextFormatting.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SOCKS5 Proxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="socks5-proxy">
+<h1>SOCKS5 Proxy<a class="headerlink" href="#socks5-proxy" title="Permalink to this headline">¶</a></h1>
+<p>Pyrogram supports proxies with and without authentication. This feature allows Pyrogram to exchange data with Telegram
+through an intermediate SOCKS5 proxy server.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">To use Pyrogram with a proxy, simply append the following to your <code class="docutils literal"><span class="pre">config.ini</span></code> file and replace the values
+with your own settings:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[proxy]</span>
+<span class="na">enabled</span> <span class="o">=</span> <span class="s">True</span>
+<span class="na">hostname</span> <span class="o">=</span> <span class="s">11.22.33.44</span>
+<span class="na">port</span> <span class="o">=</span> <span class="s">1080</span>
+<span class="na">username</span> <span class="o">=</span> <span class="s">&lt;your_username&gt;</span>
+<span class="na">password</span> <span class="o">=</span> <span class="s">&lt;your_password&gt;</span>
+</pre></div>
+</div>
+<p>To enable or disable the proxy without deleting your settings from the config file,
+change the <code class="docutils literal"><span class="pre">enabled</span></code> value as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">1</span></code>, <code class="docutils literal"><span class="pre">yes</span></code>, <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">on</span></code>: Enables the proxy</li>
+<li><code class="docutils literal"><span class="pre">0</span></code>, <code class="docutils literal"><span class="pre">no</span></code>, <code class="docutils literal"><span class="pre">False</span></code> or <code class="docutils literal"><span class="pre">off</span></code>: Disables the proxy</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Alternatively, you can setup your proxy without the need of the <code class="docutils literal"><span class="pre">config.ini</span></code> file by using the <em>proxy</em> parameter
+in the Client class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+    <span class="n">session_name</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
+    <span class="n">proxy</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;11.22.33.44&quot;</span><span class="p">,</span>
+        <span class="n">port</span><span class="o">=</span><span class="mi">1080</span><span class="p">,</span>
+        <span class="n">username</span><span class="o">=</span><span class="s2">&quot;&lt;your_username&gt;&quot;</span><span class="p">,</span>
+        <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&lt;your_password&gt;&quot;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your proxy doesn’t require authorization you can omit <code class="docutils literal"><span class="pre">username</span></code> and <code class="docutils literal"><span class="pre">password</span></code> by either leaving the
+values blank/empty or completely delete the lines.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BotsInteraction.html" class="btn btn-neutral float-right" title="Bots Interaction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="TextFormatting.html" class="btn btn-neutral" title="Text Formatting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

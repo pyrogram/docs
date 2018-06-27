@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SecureValueErrorData &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/types/SecureValueErrorData.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SecureValueErrorFile" href="SecureValueErrorFile.html" />
+    <link rel="prev" title="SecureValue" href="SecureValue.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Types</a> &raquo;</li>
+        
+      <li>SecureValueErrorData</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="securevalueerrordata">
+<h1>SecureValueErrorData<a class="headerlink" href="#securevalueerrordata" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyrogram.api.types.SecureValueErrorData">
+<em class="property">class </em><code class="descclassname">pyrogram.api.types.</code><code class="descname">SecureValueErrorData</code><span class="sig-paren">(</span><em>type</em>, <em>data_hash: bytes</em>, <em>field: str</em>, <em>text: str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.api.types.SecureValueErrorData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="pyrogram.api.types.SecureValueErrorData.ID">
+<code class="descname">ID</code><a class="headerlink" href="#pyrogram.api.types.SecureValueErrorData.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">0xe8a40bd9</span></code></p>
+</dd></dl>
+
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> – Either <a class="reference internal" href="SecureValueTypePersonalDetails.html#pyrogram.api.types.SecureValueTypePersonalDetails" title="pyrogram.api.types.SecureValueTypePersonalDetails"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypePersonalDetails</span></code></a>, <a class="reference internal" href="SecureValueTypePassport.html#pyrogram.api.types.SecureValueTypePassport" title="pyrogram.api.types.SecureValueTypePassport"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypePassport</span></code></a>, <a class="reference internal" href="SecureValueTypeDriverLicense.html#pyrogram.api.types.SecureValueTypeDriverLicense" title="pyrogram.api.types.SecureValueTypeDriverLicense"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeDriverLicense</span></code></a>, <a class="reference internal" href="SecureValueTypeIdentityCard.html#pyrogram.api.types.SecureValueTypeIdentityCard" title="pyrogram.api.types.SecureValueTypeIdentityCard"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeIdentityCard</span></code></a>, <a class="reference internal" href="SecureValueTypeInternalPassport.html#pyrogram.api.types.SecureValueTypeInternalPassport" title="pyrogram.api.types.SecureValueTypeInternalPassport"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeInternalPassport</span></code></a>, <a class="reference internal" href="SecureValueTypeAddress.html#pyrogram.api.types.SecureValueTypeAddress" title="pyrogram.api.types.SecureValueTypeAddress"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeAddress</span></code></a>, <a class="reference internal" href="SecureValueTypeUtilityBill.html#pyrogram.api.types.SecureValueTypeUtilityBill" title="pyrogram.api.types.SecureValueTypeUtilityBill"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeUtilityBill</span></code></a>, <a class="reference internal" href="SecureValueTypeBankStatement.html#pyrogram.api.types.SecureValueTypeBankStatement" title="pyrogram.api.types.SecureValueTypeBankStatement"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeBankStatement</span></code></a>, <a class="reference internal" href="SecureValueTypeRentalAgreement.html#pyrogram.api.types.SecureValueTypeRentalAgreement" title="pyrogram.api.types.SecureValueTypeRentalAgreement"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeRentalAgreement</span></code></a>, <a class="reference internal" href="SecureValueTypePassportRegistration.html#pyrogram.api.types.SecureValueTypePassportRegistration" title="pyrogram.api.types.SecureValueTypePassportRegistration"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypePassportRegistration</span></code></a>, <a class="reference internal" href="SecureValueTypeTemporaryRegistration.html#pyrogram.api.types.SecureValueTypeTemporaryRegistration" title="pyrogram.api.types.SecureValueTypeTemporaryRegistration"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeTemporaryRegistration</span></code></a>, <a class="reference internal" href="SecureValueTypePhone.html#pyrogram.api.types.SecureValueTypePhone" title="pyrogram.api.types.SecureValueTypePhone"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypePhone</span></code></a> or <a class="reference internal" href="SecureValueTypeEmail.html#pyrogram.api.types.SecureValueTypeEmail" title="pyrogram.api.types.SecureValueTypeEmail"><code class="xref py py-obj docutils literal"><span class="pre">SecureValueTypeEmail</span></code></a></li>
+<li><strong>data_hash</strong> – <code class="docutils literal"><span class="pre">bytes</span></code></li>
+<li><strong>field</strong> – <code class="docutils literal"><span class="pre">str</span></code></li>
+<li><strong>text</strong> – <code class="docutils literal"><span class="pre">str</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SecureValueErrorFile.html" class="btn btn-neutral float-right" title="SecureValueErrorFile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SecureValue.html" class="btn btn-neutral" title="SecureValue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

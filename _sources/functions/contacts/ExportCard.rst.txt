@@ -1,0 +1,5 @@
+ExportCard
+==========
+
+.. autoclass:: pyrogram.api.functions.contacts.ExportCard
+    :members:

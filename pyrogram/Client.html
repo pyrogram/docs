@@ -1,0 +1,2268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Client &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/pyrogram/Client.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Types" href="types/index.html" />
+    <link rel="prev" title="Pyrogram" href="index.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://media.pyrogram.ml/images/pyrogram.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.7.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#raw-functions">Raw Functions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-filters">Using Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#handler-groups">Handler Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">TgCrypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pyrogram</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/index.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="handlers/index.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Error.html">Error</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Pyrogram</a> &raquo;</li>
+        
+      <li>Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyrogram.Client">
+<em class="property">class </em><code class="descclassname">pyrogram.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>session_name: str</em>, <em>api_id: int = None</em>, <em>api_hash: str = None</em>, <em>app_version: str = None</em>, <em>device_model: str = None</em>, <em>system_version: str = None</em>, <em>lang_code: str = None</em>, <em>proxy: dict = None</em>, <em>test_mode: bool = False</em>, <em>phone_number: str = None</em>, <em>phone_code: str = None</em>, <em>password: str = None</em>, <em>force_sms: bool = False</em>, <em>first_name: str = None</em>, <em>last_name: str = None</em>, <em>workers: int = 4</em>, <em>workdir: str = '.'</em>, <em>config_file: str = './config.ini'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a Client, the main mean for interacting with Telegram.
+It exposes bot-like methods for an easy access to the API as well as a simple way to
+invoke every single Telegram API method available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>session_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Name to uniquely identify a session of either a User or a Bot.
+For Users: pass a string of your choice, e.g.: “my_main_account”.
+For Bots: pass your Bot API token, e.g.: “123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11”
+Note: as long as a valid User session file exists, Pyrogram won’t ask you again to input your phone number.</li>
+<li><strong>api_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The <em>api_id</em> part of your Telegram API Key, as integer. E.g.: 12345
+This is an alternative way to pass it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>api_hash</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – The <em>api_hash</em> part of your Telegram API Key, as string. E.g.: “0123456789abcdef0123456789abcdef”
+This is an alternative way to pass it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>app_version</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Application version. Defaults to “Pyrogram 🔥 vX.Y.Z”
+This is an alternative way to set it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>device_model</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Device model. Defaults to <em>platform.python_implementation() + ” ” + platform.python_version()</em>
+This is an alternative way to set it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>system_version</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Operating System version. Defaults to <em>platform.system() + ” ” + platform.release()</em>
+This is an alternative way to set it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>lang_code</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Code of the language used on the client, in ISO 639-1 standard. Defaults to “en”.
+This is an alternative way to set it if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>proxy</strong> (<code class="docutils literal"><span class="pre">dict</span></code>, <em>optional</em>) – Your SOCKS5 Proxy settings as dict,
+e.g.: <em>dict(hostname=”11.22.33.44”, port=1080, username=”user”, password=”pass”)</em>.
+<em>username</em> and <em>password</em> can be omitted if your proxy doesn’t require authorization.
+This is an alternative way to setup a proxy if you don’t want to use the <em>config.ini</em> file.</li>
+<li><strong>test_mode</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Enable or disable log-in to testing servers. Defaults to False.
+Only applicable for new sessions and will be ignored in case previously
+created sessions are loaded.</li>
+<li><strong>phone_number</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Pass your phone number (with your Country Code prefix included) to avoid
+entering it manually. Only applicable for new sessions.</li>
+<li><strong>phone_code</strong> (<code class="docutils literal"><span class="pre">str</span></code> | <code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass the phone code as string (for test numbers only), or pass a callback function which accepts
+a single positional argument <em>(phone_number)</em> and must return the correct phone code (e.g., “12345”).
+Only applicable for new sessions.</li>
+<li><strong>password</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Pass your Two-Step Verification password (if you have one) to avoid entering it
+manually. Only applicable for new sessions.</li>
+<li><strong>force_sms</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Pass True to force Telegram sending the authorization code via SMS.
+Only applicable for new sessions.</li>
+<li><strong>first_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Pass a First Name to avoid entering it manually. It will be used to automatically
+create a new Telegram account in case the phone number you passed is not registered yet.
+Only applicable for new sessions.</li>
+<li><strong>last_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Same purpose as <em>first_name</em>; pass a Last Name to avoid entering it manually. It can
+be an empty string: “”. Only applicable for new sessions.</li>
+<li><strong>workers</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Thread pool size for handling incoming updates. Defaults to 4.</li>
+<li><strong>workdir</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Define a custom working directory. The working directory is the location in your filesystem
+where Pyrogram will store your session files. Defaults to “.” (current directory).</li>
+<li><strong>config_file</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Path of the configuration file. Defaults to ./config.ini</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="available-methods"><strong>Available methods</strong></p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.start" title="pyrogram.Client.start"><code class="xref py py-obj docutils literal"><span class="pre">start</span></code></a></td>
+<td>Use this method to start the Client after creating it.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.stop" title="pyrogram.Client.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a></td>
+<td>Use this method to manually stop the Client.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.idle" title="pyrogram.Client.idle"><code class="xref py py-obj docutils literal"><span class="pre">idle</span></code></a></td>
+<td>Blocks the program execution until one of the signals are received, then gently stop the Client by closing the underlying connection.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.run" title="pyrogram.Client.run"><code class="xref py py-obj docutils literal"><span class="pre">run</span></code></a></td>
+<td>Use this method to automatically start and idle a Client.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.on_message" title="pyrogram.Client.on_message"><code class="xref py py-obj docutils literal"><span class="pre">on_message</span></code></a></td>
+<td>Use this decorator to automatically register a function for handling messages.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.on_callback_query" title="pyrogram.Client.on_callback_query"><code class="xref py py-obj docutils literal"><span class="pre">on_callback_query</span></code></a></td>
+<td>Use this decorator to automatically register a function for handling callback queries.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.on_raw_update" title="pyrogram.Client.on_raw_update"><code class="xref py py-obj docutils literal"><span class="pre">on_raw_update</span></code></a></td>
+<td>Use this decorator to automatically register a function for handling raw updates.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-obj docutils literal"><span class="pre">add_handler</span></code></a></td>
+<td>Use this method to register an update handler.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.remove_handler" title="pyrogram.Client.remove_handler"><code class="xref py py-obj docutils literal"><span class="pre">remove_handler</span></code></a></td>
+<td>Removes a previously-added update handler.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send" title="pyrogram.Client.send"><code class="xref py py-obj docutils literal"><span class="pre">send</span></code></a></td>
+<td>Use this method to send Raw Function queries.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.resolve_peer" title="pyrogram.Client.resolve_peer"><code class="xref py py-obj docutils literal"><span class="pre">resolve_peer</span></code></a></td>
+<td>Use this method to get the <em>InputPeer</em> of a known <em>peer_id</em>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_me" title="pyrogram.Client.get_me"><code class="xref py py-obj docutils literal"><span class="pre">get_me</span></code></a></td>
+<td>A simple method for testing your authorization.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_message" title="pyrogram.Client.send_message"><code class="xref py py-obj docutils literal"><span class="pre">send_message</span></code></a></td>
+<td>Use this method to send text messages.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.forward_messages" title="pyrogram.Client.forward_messages"><code class="xref py py-obj docutils literal"><span class="pre">forward_messages</span></code></a></td>
+<td>Use this method to forward messages of any kind.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_photo" title="pyrogram.Client.send_photo"><code class="xref py py-obj docutils literal"><span class="pre">send_photo</span></code></a></td>
+<td>Use this method to send photos.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_audio" title="pyrogram.Client.send_audio"><code class="xref py py-obj docutils literal"><span class="pre">send_audio</span></code></a></td>
+<td>Use this method to send audio files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_document" title="pyrogram.Client.send_document"><code class="xref py py-obj docutils literal"><span class="pre">send_document</span></code></a></td>
+<td>Use this method to send general files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_sticker" title="pyrogram.Client.send_sticker"><code class="xref py py-obj docutils literal"><span class="pre">send_sticker</span></code></a></td>
+<td>Use this method to send .webp stickers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_video" title="pyrogram.Client.send_video"><code class="xref py py-obj docutils literal"><span class="pre">send_video</span></code></a></td>
+<td>Use this method to send video files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_voice" title="pyrogram.Client.send_voice"><code class="xref py py-obj docutils literal"><span class="pre">send_voice</span></code></a></td>
+<td>Use this method to send audio files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_video_note" title="pyrogram.Client.send_video_note"><code class="xref py py-obj docutils literal"><span class="pre">send_video_note</span></code></a></td>
+<td>Use this method to send video messages.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_media_group" title="pyrogram.Client.send_media_group"><code class="xref py py-obj docutils literal"><span class="pre">send_media_group</span></code></a></td>
+<td>Use this method to send a group of photos or videos as an album.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_location" title="pyrogram.Client.send_location"><code class="xref py py-obj docutils literal"><span class="pre">send_location</span></code></a></td>
+<td>Use this method to send points on the map.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_venue" title="pyrogram.Client.send_venue"><code class="xref py py-obj docutils literal"><span class="pre">send_venue</span></code></a></td>
+<td>Use this method to send information about a venue.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_contact" title="pyrogram.Client.send_contact"><code class="xref py py-obj docutils literal"><span class="pre">send_contact</span></code></a></td>
+<td>Use this method to send phone contacts.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.send_chat_action" title="pyrogram.Client.send_chat_action"><code class="xref py py-obj docutils literal"><span class="pre">send_chat_action</span></code></a></td>
+<td>Use this method when you need to tell the other party that something is happening on your side.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.download_media" title="pyrogram.Client.download_media"><code class="xref py py-obj docutils literal"><span class="pre">download_media</span></code></a></td>
+<td>Use this method to download the media from a Message.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_user_profile_photos" title="pyrogram.Client.get_user_profile_photos"><code class="xref py py-obj docutils literal"><span class="pre">get_user_profile_photos</span></code></a></td>
+<td>Use this method to get a list of profile pictures for a user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.edit_message_text" title="pyrogram.Client.edit_message_text"><code class="xref py py-obj docutils literal"><span class="pre">edit_message_text</span></code></a></td>
+<td>Use this method to edit text messages.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.edit_message_caption" title="pyrogram.Client.edit_message_caption"><code class="xref py py-obj docutils literal"><span class="pre">edit_message_caption</span></code></a></td>
+<td>Use this method to edit captions of messages.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.edit_message_reply_markup" title="pyrogram.Client.edit_message_reply_markup"><code class="xref py py-obj docutils literal"><span class="pre">edit_message_reply_markup</span></code></a></td>
+<td>Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.delete_messages" title="pyrogram.Client.delete_messages"><code class="xref py py-obj docutils literal"><span class="pre">delete_messages</span></code></a></td>
+<td>Use this method to delete messages, including service messages, with the following limitations:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.join_chat" title="pyrogram.Client.join_chat"><code class="xref py py-obj docutils literal"><span class="pre">join_chat</span></code></a></td>
+<td>Use this method to join a group chat or channel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.leave_chat" title="pyrogram.Client.leave_chat"><code class="xref py py-obj docutils literal"><span class="pre">leave_chat</span></code></a></td>
+<td>Use this method to leave a group chat or channel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.export_chat_invite_link" title="pyrogram.Client.export_chat_invite_link"><code class="xref py py-obj docutils literal"><span class="pre">export_chat_invite_link</span></code></a></td>
+<td>Use this method to generate a new invite link for a chat; any previously generated link is revoked.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.enable_cloud_password" title="pyrogram.Client.enable_cloud_password"><code class="xref py py-obj docutils literal"><span class="pre">enable_cloud_password</span></code></a></td>
+<td>Use this method to enable the Two-Step Verification security feature (Cloud Password) on your account.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.change_cloud_password" title="pyrogram.Client.change_cloud_password"><code class="xref py py-obj docutils literal"><span class="pre">change_cloud_password</span></code></a></td>
+<td>Use this method to change your Two-Step Verification password (Cloud Password) with a new one.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.remove_cloud_password" title="pyrogram.Client.remove_cloud_password"><code class="xref py py-obj docutils literal"><span class="pre">remove_cloud_password</span></code></a></td>
+<td>Use this method to turn off the Two-Step Verification security feature (Cloud Password) on your account.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.kick_chat_member" title="pyrogram.Client.kick_chat_member"><code class="xref py py-obj docutils literal"><span class="pre">kick_chat_member</span></code></a></td>
+<td>Use this method to kick a user from a group, a supergroup or a channel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.unban_chat_member" title="pyrogram.Client.unban_chat_member"><code class="xref py py-obj docutils literal"><span class="pre">unban_chat_member</span></code></a></td>
+<td>Use this method to unban a previously kicked user in a supergroup or channel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.restrict_chat_member" title="pyrogram.Client.restrict_chat_member"><code class="xref py py-obj docutils literal"><span class="pre">restrict_chat_member</span></code></a></td>
+<td>Use this method to restrict a user in a supergroup.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.promote_chat_member" title="pyrogram.Client.promote_chat_member"><code class="xref py py-obj docutils literal"><span class="pre">promote_chat_member</span></code></a></td>
+<td>Use this method to promote or demote a user in a supergroup or a channel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.add_contacts" title="pyrogram.Client.add_contacts"><code class="xref py py-obj docutils literal"><span class="pre">add_contacts</span></code></a></td>
+<td>Use this method to add contacts to your Telegram address book.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_contacts" title="pyrogram.Client.get_contacts"><code class="xref py py-obj docutils literal"><span class="pre">get_contacts</span></code></a></td>
+<td>Use this method to get contacts from your Telegram address book</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.delete_contacts" title="pyrogram.Client.delete_contacts"><code class="xref py py-obj docutils literal"><span class="pre">delete_contacts</span></code></a></td>
+<td>Use this method to delete contacts from your Telegram address book</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_inline_bot_results" title="pyrogram.Client.get_inline_bot_results"><code class="xref py py-obj docutils literal"><span class="pre">get_inline_bot_results</span></code></a></td>
+<td>Use this method to get bot results via inline queries.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.send_inline_bot_result" title="pyrogram.Client.send_inline_bot_result"><code class="xref py py-obj docutils literal"><span class="pre">send_inline_bot_result</span></code></a></td>
+<td>Use this method to send an inline bot result.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.answer_callback_query" title="pyrogram.Client.answer_callback_query"><code class="xref py py-obj docutils literal"><span class="pre">answer_callback_query</span></code></a></td>
+<td>Use this method to send answers to callback queries sent from inline keyboards.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.request_callback_answer" title="pyrogram.Client.request_callback_answer"><code class="xref py py-obj docutils literal"><span class="pre">request_callback_answer</span></code></a></td>
+<td>Use this method to request a callback answer from bots.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_users" title="pyrogram.Client.get_users"><code class="xref py py-obj docutils literal"><span class="pre">get_users</span></code></a></td>
+<td>Use this method to get information about a user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-obj docutils literal"><span class="pre">get_chat</span></code></a></td>
+<td>Use this method to get up to date information about the chat (current name of the user for</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pyrogram.Client.get_messages" title="pyrogram.Client.get_messages"><code class="xref py py-obj docutils literal"><span class="pre">get_messages</span></code></a></td>
+<td>Use this method to get messages that belong to a specific chat.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pyrogram.Client.get_history" title="pyrogram.Client.get_history"><code class="xref py py-obj docutils literal"><span class="pre">get_history</span></code></a></td>
+<td>Use this method to retrieve the history of a chat.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyrogram.Client.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to start the Client after creating it.
+Requires no parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to manually stop the Client.
+Requires no parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.idle">
+<code class="descname">idle</code><span class="sig-paren">(</span><em>stop_signals: tuple = (&lt;Signals.SIGINT: 2&gt;</em>, <em>&lt;Signals.SIGTERM: 15&gt;</em>, <em>&lt;Signals.SIGABRT: 6&gt;)</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.idle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blocks the program execution until one of the signals are received,
+then gently stop the Client by closing the underlying connection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stop_signals</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Iterable containing signals the signal handler will listen to.
+Defaults to (SIGINT, SIGTERM, SIGABRT).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to automatically start and idle a Client.
+Requires no parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.add_handler">
+<code class="descname">add_handler</code><span class="sig-paren">(</span><em>handler</em>, <em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.add_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to register an update handler.</p>
+<p>You can register multiple handlers, but at most one handler within a group
+will be used for a single update. To handle the same update more than once, register
+your handler using a different group id (lower group id == higher priority).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>handler</strong> (<code class="docutils literal"><span class="pre">Handler</span></code>) – The handler to be registered.</li>
+<li><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A tuple of (handler, group)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.remove_handler">
+<code class="descname">remove_handler</code><span class="sig-paren">(</span><em>handler</em>, <em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.remove_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a previously-added update handler.</p>
+<p>Make sure to provide the right group that the handler was added in. You can use
+the return value of the <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> method, a tuple of (handler, group), and
+pass it directly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>handler</strong> (<code class="docutils literal"><span class="pre">Handler</span></code>) – The handler to be removed.</li>
+<li><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>data: pyrogram.api.core.object.Object</em>, <em>retries: int = 5</em>, <em>timeout: float = 15</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send Raw Function queries.</p>
+<p>This method makes possible to manually call every single Telegram API method in a low-level manner.
+Available functions are listed in the <a class="reference internal" href="../functions/index.html#module-pyrogram.api.functions" title="pyrogram.api.functions"><code class="xref py py-obj docutils literal"><span class="pre">functions</span></code></a> package and may accept compound
+data types from <a class="reference internal" href="../types/index.html#module-pyrogram.api.types" title="pyrogram.api.types"><code class="xref py py-obj docutils literal"><span class="pre">types</span></code></a> as well as bare types such as <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">str</span></code>, etc…</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<code class="docutils literal"><span class="pre">Object</span></code>) – The API Scheme function filled with proper arguments.</li>
+<li><strong>retries</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – Number of retries.</li>
+<li><strong>timeout</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Timeout in seconds.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.resolve_peer">
+<code class="descname">resolve_peer</code><span class="sig-paren">(</span><em>peer_id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.resolve_peer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get the <em>InputPeer</em> of a known <em>peer_id</em>.</p>
+<p>It is intended to be used when working with Raw Functions (i.e: a Telegram API method you wish to use which is
+not available yet in the Client class as an easy-to-use method).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>peer_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code> | <code class="docutils literal"><span class="pre">Peer</span></code>) – The Peer ID you want to extract the InputPeer from. Can be one of these types: <code class="docutils literal"><span class="pre">int</span></code> (direct ID),
+<code class="docutils literal"><span class="pre">str</span></code> (&#64;username), <a class="reference internal" href="../types/PeerUser.html#pyrogram.api.types.PeerUser" title="pyrogram.api.types.PeerUser"><code class="xref py py-obj docutils literal"><span class="pre">PeerUser</span></code></a>,
+<a class="reference internal" href="../types/PeerChat.html#pyrogram.api.types.PeerChat" title="pyrogram.api.types.PeerChat"><code class="xref py py-obj docutils literal"><span class="pre">PeerChat</span></code></a>, <a class="reference internal" href="../types/PeerChannel.html#pyrogram.api.types.PeerChannel" title="pyrogram.api.types.PeerChannel"><code class="xref py py-obj docutils literal"><span class="pre">PeerChannel</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="../types/InputPeerUser.html#pyrogram.api.types.InputPeerUser" title="pyrogram.api.types.InputPeerUser"><code class="xref py py-obj docutils literal"><span class="pre">InputPeerUser</span></code></a> or
+<a class="reference internal" href="../types/InputPeerChat.html#pyrogram.api.types.InputPeerChat" title="pyrogram.api.types.InputPeerChat"><code class="xref py py-obj docutils literal"><span class="pre">InputPeerChat</span></code></a> or
+<a class="reference internal" href="../types/InputPeerChannel.html#pyrogram.api.types.InputPeerChannel" title="pyrogram.api.types.InputPeerChannel"><code class="xref py py-obj docutils literal"><span class="pre">InputPeerChannel</span></code></a> depending on the <em>peer_id</em>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.add_contacts">
+<code class="descname">add_contacts</code><span class="sig-paren">(</span><em>contacts: list</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.add_contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to add contacts to your Telegram address book.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>contacts</strong> (<code class="docutils literal"><span class="pre">list</span></code>) – A list of <a class="reference internal" href="types/InputPhoneContact.html#pyrogram.InputPhoneContact" title="pyrogram.InputPhoneContact"><code class="xref py py-obj docutils literal"><span class="pre">InputPhoneContact</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">On success, the added contacts are returned.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.answer_callback_query">
+<code class="descname">answer_callback_query</code><span class="sig-paren">(</span><em>callback_query_id: str</em>, <em>text: str = None</em>, <em>show_alert: bool = None</em>, <em>url: str = None</em>, <em>cache_time: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.answer_callback_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send answers to callback queries sent from inline keyboards.
+The answer will be displayed to the user as a notification at the top of the chat screen or as an alert.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>callback_query_id</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier for the query to be answered.</li>
+<li><strong>text</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters.</li>
+<li><strong>show_alert</strong> (<code class="docutils literal"><span class="pre">bool</span></code>) – If true, an alert will be shown by the client instead of a notification at the top of the chat screen.
+Defaults to False.</li>
+<li><strong>url</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – URL that will be opened by the user’s client.
+If you have created a Game and accepted the conditions via &#64;Botfather, specify the URL that opens your
+game – note that this will only work if the query comes from a callback_game button.
+Otherwise, you may use links like t.me/your_bot?start=XXXX that open your bot with a parameter.</li>
+<li><strong>cache_time</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The maximum amount of time in seconds that the result of the callback query may be cached client-side.
+Telegram apps will support caching starting in version 3.14. Defaults to 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.change_cloud_password">
+<code class="descname">change_cloud_password</code><span class="sig-paren">(</span><em>current_password: str</em>, <em>new_password: str</em>, <em>new_hint: str = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.change_cloud_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to change your Two-Step Verification password (Cloud Password) with a new one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>current_password</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Your current password.</li>
+<li><strong>new_password</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Your new password.</li>
+<li><strong>new_hint</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – A new password hint.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.delete_contacts">
+<code class="descname">delete_contacts</code><span class="sig-paren">(</span><em>ids: list</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.delete_contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to delete contacts from your Telegram address book</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ids</strong> (<code class="docutils literal"><span class="pre">list</span></code>) – A list of unique identifiers for the target users.
+Can be an ID (int), a username (string) or phone number (string).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True on success.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.delete_messages">
+<code class="descname">delete_messages</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_ids</em>, <em>revoke: bool = True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.delete_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to delete messages, including service messages, with the following limitations:</p>
+<ul class="simple">
+<li>A message can only be deleted if it was sent less than 48 hours ago.</li>
+<li>Users can delete outgoing messages in groups and supergroups.</li>
+<li>Users granted <em>can_post_messages</em> permissions can delete outgoing messages in channels.</li>
+<li>If the user is an administrator of a group, it can delete any message there.</li>
+<li>If the user has <em>can_delete_messages</em> permission in a supergroup or a channel, it can delete any message there.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_ids</strong> (<code class="docutils literal"><span class="pre">iterable</span></code>) – A list of Message identifiers to delete or a single message id.
+Iterators and Generators are also accepted.</li>
+<li><strong>revoke</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Deletes messages on both parts.
+This is only for private cloud chats and normal groups, messages on
+channels and supergroups are always revoked (i.e.: deleted for everyone).
+Defaults to True.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.download_media">
+<code class="descname">download_media</code><span class="sig-paren">(</span><em>message: pyrogram.client.types.message.Message</em>, <em>file_name: str = ''</em>, <em>block: bool = True</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.download_media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to download the media from a Message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>message</strong> (<a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> | <code class="docutils literal"><span class="pre">str</span></code>) – Pass a Message containing the media, the media itself (message.audio, message.video, …) or
+the file id as string.</li>
+<li><strong>file_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – A custom <em>file_name</em> to be used instead of the one provided by Telegram.
+By default, all files are downloaded in the <em>downloads</em> folder in your working directory.
+You can also specify a path for downloading files in a custom location: paths that end with “/”
+are considered directories. All non-existent folders will be created automatically.</li>
+<li><strong>block</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Blocks the code execution until the file has been downloaded.
+Defaults to True.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>) – Pass a callback function to view the download progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes downloaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the absolute path of the downloaded file as string is returned, None otherwise.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.edit_message_caption">
+<code class="descname">edit_message_caption</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_id: int</em>, <em>caption: str</em>, <em>parse_mode: str = ''</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.edit_message_caption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to edit captions of messages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – Message identifier in the chat specified in chat_id.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – New caption of the message.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a>, <em>optional</em>) – An InlineKeyboardMarkup object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the edited <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.edit_message_reply_markup">
+<code class="descname">edit_message_reply_markup</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_id: int</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.edit_message_reply_markup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – Message identifier in the chat specified in chat_id.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a>, <em>optional</em>) – An InlineKeyboardMarkup object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, if edited message is sent by the bot, the edited
+<a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned, otherwise True is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.edit_message_text">
+<code class="descname">edit_message_text</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_id: int</em>, <em>text: str</em>, <em>parse_mode: str = ''</em>, <em>disable_web_page_preview: bool = None</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.edit_message_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to edit text messages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – Message identifier in the chat specified in chat_id.</li>
+<li><strong>text</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – New text of the message.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your message.
+Defaults to Markdown.</li>
+<li><strong>disable_web_page_preview</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Disables link previews for links in this message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a>, <em>optional</em>) – An InlineKeyboardMarkup object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the edited <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.enable_cloud_password">
+<code class="descname">enable_cloud_password</code><span class="sig-paren">(</span><em>password: str</em>, <em>hint: str = ''</em>, <em>email: str = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.enable_cloud_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to enable the Two-Step Verification security feature (Cloud Password) on your account.</p>
+<p>This password will be asked when you log in on a new device in addition to the SMS code.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>password</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Your password.</li>
+<li><strong>hint</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – A password hint.</li>
+<li><strong>email</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Recovery e-mail.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.export_chat_invite_link">
+<code class="descname">export_chat_invite_link</code><span class="sig-paren">(</span><em>chat_id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.export_chat_invite_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to generate a new invite link for a chat; any previously generated link is revoked.</p>
+<p>You must be an administrator in the chat for this to work and have the appropriate admin rights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier for the target chat or username of the target channel/supergroup
+(in the format &#64;username).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">On success, the exported invite link as string is returned.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.forward_messages">
+<code class="descname">forward_messages</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>from_chat_id: int</em>, <em>message_ids</em>, <em>disable_notification: bool = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.forward_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to forward messages of any kind.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>from_chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the source chat where the original message was sent.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_ids</strong> (<code class="docutils literal"><span class="pre">iterable</span></code>) – A list of Message identifiers in the chat specified in <em>from_chat_id</em> or a single message id.
+Iterators and Generators are also accepted.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success and in case <em>message_ids</em> was a list, the returned value will be a list of the forwarded
+<a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Messages</span></code></a> even if a list contains just one element, otherwise if
+<em>message_ids</em> was an integer, the single forwarded <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a>
+is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_chat">
+<code class="descname">get_chat</code><span class="sig-paren">(</span><em>chat_id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get up to date information about the chat (current name of the user for
+one-on-one conversations, current username of a user, group or channel, etc.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">On success, a <a class="reference internal" href="types/Chat.html#pyrogram.Chat" title="pyrogram.Chat"><code class="xref py py-obj docutils literal"><span class="pre">Chat</span></code></a> object is returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_contacts">
+<code class="descname">get_contacts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get contacts from your Telegram address book</p>
+<p>Requires no parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">On success, the user’s contacts are returned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_history">
+<code class="descname">get_history</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>offset: int = 0</em>, <em>limit: int = 100</em>, <em>offset_id: int = 0</em>, <em>offset_date: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to retrieve the history of a chat.</p>
+<p>You can get up to 100 messages at once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>offset</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Sequential number of the first message to be returned.
+Defaults to 0 (most recent message).</li>
+<li><strong>limit</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Limits the number of messages to be retrieved.
+By default, the first 100 messages are returned.</li>
+<li><strong>offset_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Pass a message identifier as offset to retrieve only older messages starting from that message.</li>
+<li><strong>offset_date</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Pass a date in Unix time as offset to retrieve only older messages starting from that date.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, a <a class="reference internal" href="types/Messages.html#pyrogram.Messages" title="pyrogram.Messages"><code class="xref py py-obj docutils literal"><span class="pre">Messages</span></code></a> object is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_inline_bot_results">
+<code class="descname">get_inline_bot_results</code><span class="sig-paren">(</span><em>bot: int</em>, <em>query: str</em>, <em>offset: str = ''</em>, <em>latitude: float = None</em>, <em>longitude: float = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_inline_bot_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get bot results via inline queries.
+You can then send a result using <a class="reference internal" href="#pyrogram.Client.send_inline_bot_result" title="pyrogram.Client.send_inline_bot_result"><code class="xref py py-obj docutils literal"><span class="pre">send_inline_bot_result</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bot</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier of the inline bot you want to get results from. You can specify
+a &#64;username (str) or a bot ID (int).</li>
+<li><strong>query</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Text of the query (up to 512 characters).</li>
+<li><strong>offset</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Offset of the results to be returned.</li>
+<li><strong>latitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>, <em>optional</em>) – Latitude of the location.
+Useful for location-based results only.</li>
+<li><strong>longitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>, <em>optional</em>) – Longitude of the location.
+Useful for location-based results only.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On Success, <a class="reference internal" href="../types/messages/BotResults.html#pyrogram.api.types.messages.BotResults" title="pyrogram.api.types.messages.BotResults"><code class="xref py py-obj docutils literal"><span class="pre">BotResults</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></li>
+<li><code class="docutils literal"><span class="pre">TimeoutError</span></code> – If the bot fails to answer within 10 seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_me">
+<code class="descname">get_me</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_me" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple method for testing your authorization. Requires no parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Basic information about the user or bot in form of a <a class="reference internal" href="types/User.html#pyrogram.User" title="pyrogram.User"><code class="xref py py-obj docutils literal"><span class="pre">User</span></code></a> object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_messages">
+<code class="descname">get_messages</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_ids</em>, <em>replies: int = 1</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get messages that belong to a specific chat.
+You can retrieve up to 200 messages at once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_ids</strong> (<code class="docutils literal"><span class="pre">iterable</span></code>) – A list of Message identifiers in the chat specified in <em>chat_id</em> or a single message id, as integer.
+Iterators and Generators are also accepted.</li>
+<li><strong>replies</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The number of subsequent replies to get for each message. Defaults to 1.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success and in case <em>message_ids</em> was a list, the returned value will be a list of the requested
+<a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Messages</span></code></a> even if a list contains just one element, otherwise if
+<em>message_ids</em> was an integer, the single requested <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a>
+is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_user_profile_photos">
+<code class="descname">get_user_profile_photos</code><span class="sig-paren">(</span><em>user_id: int</em>, <em>offset: int = 0</em>, <em>limit: int = 100</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_user_profile_photos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get a list of profile pictures for a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>user_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>offset</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Sequential number of the first photo to be returned.
+By default, all photos are returned.</li>
+<li><strong>limit</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Limits the number of photos to be retrieved.
+Values between 1—100 are accepted. Defaults to 100.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, a <a class="reference internal" href="types/UserProfilePhotos.html#pyrogram.UserProfilePhotos" title="pyrogram.UserProfilePhotos"><code class="xref py py-obj docutils literal"><span class="pre">UserProfilePhotos</span></code></a> object is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.get_users">
+<code class="descname">get_users</code><span class="sig-paren">(</span><em>user_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get information about a user.
+You can retrieve up to 200 users at once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user_ids</strong> (<code class="docutils literal"><span class="pre">iterable</span></code>) – A list of User identifiers (id or username) or a single user id/username.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+Iterators and Generators are also accepted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">On success and in case <em>user_ids</em> was a list, the returned value will be a list of the requested
+<a class="reference internal" href="types/User.html#pyrogram.User" title="pyrogram.User"><code class="xref py py-obj docutils literal"><span class="pre">Users</span></code></a> even if a list contains just one element, otherwise if
+<em>user_ids</em> was an integer, the single requested <a class="reference internal" href="types/User.html#pyrogram.User" title="pyrogram.User"><code class="xref py py-obj docutils literal"><span class="pre">User</span></code></a> is returned.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.join_chat">
+<code class="descname">join_chat</code><span class="sig-paren">(</span><em>chat_id: str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.join_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to join a group chat or channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier for the target chat in form of <em>t.me/joinchat/</em> links or username of the target
+channel/supergroup (in the format &#64;username).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.kick_chat_member">
+<code class="descname">kick_chat_member</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>user_id: int</em>, <em>until_date: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.kick_chat_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to kick a user from a group, a supergroup or a channel.
+In the case of supergroups and channels, the user will not be able to return to the group on their own using
+invite links, etc., unless unbanned first. You must be an administrator in the chat for this to work and must
+have the appropriate admin rights.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In regular groups (non-supergroups), this method will only work if the “All Members Are Admins” setting is
+off in the target group. Otherwise members may only be removed by the group’s creator or by the member
+that added them.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>user_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target user.
+For a contact that exists in your Telegram address book you can use his phone number (str).</li>
+<li><strong>until_date</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Date when the user will be unbanned, unix time.
+If user is banned for more than 366 days or less than 30 seconds from the current time they are
+considered to be banned forever. Defaults to 0 (ban forever).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.leave_chat">
+<code class="descname">leave_chat</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>delete: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.leave_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to leave a group chat or channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier for the target chat or username of the target channel/supergroup
+(in the format &#64;username).</li>
+<li><strong>delete</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Deletes the group chat dialog after leaving (for simple group chats, not supergroups).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.on_callback_query">
+<code class="descname">on_callback_query</code><span class="sig-paren">(</span><em>filters=None</em>, <em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.on_callback_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this decorator to automatically register a function for handling
+callback queries. This does the same thing as <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> using the
+<a class="reference internal" href="handlers/CallbackQueryHandler.html#pyrogram.CallbackQueryHandler" title="pyrogram.CallbackQueryHandler"><code class="xref py py-class docutils literal"><span class="pre">CallbackQueryHandler</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filters</strong> (<a class="reference internal" href="Filters.html#pyrogram.Filters" title="pyrogram.Filters"><code class="xref py py-obj docutils literal"><span class="pre">Filters</span></code></a>) – Pass one or more filters to allow only a subset of callback queries to be passed
+in your function.</li>
+<li><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.on_deleted_messages">
+<code class="descname">on_deleted_messages</code><span class="sig-paren">(</span><em>filters=None</em>, <em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.on_deleted_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this decorator to automatically register a function for handling
+deleted messages. This does the same thing as <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> using the
+<a class="reference internal" href="handlers/DeletedMessagesHandler.html#pyrogram.DeletedMessagesHandler" title="pyrogram.DeletedMessagesHandler"><code class="xref py py-class docutils literal"><span class="pre">DeletedMessagesHandler</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filters</strong> (<a class="reference internal" href="Filters.html#pyrogram.Filters" title="pyrogram.Filters"><code class="xref py py-obj docutils literal"><span class="pre">Filters</span></code></a>) – Pass one or more filters to allow only a subset of messages to be passed
+in your function.</li>
+<li><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.on_disconnect">
+<code class="descname">on_disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.on_disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this decorator to automatically register a function for handling
+disconnections. This does the same thing as <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> using the
+<a class="reference internal" href="handlers/DisconnectHandler.html#pyrogram.DisconnectHandler" title="pyrogram.DisconnectHandler"><code class="xref py py-class docutils literal"><span class="pre">DisconnectHandler</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.on_message">
+<code class="descname">on_message</code><span class="sig-paren">(</span><em>filters=None</em>, <em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.on_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this decorator to automatically register a function for handling
+messages. This does the same thing as <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> using the
+<a class="reference internal" href="handlers/MessageHandler.html#pyrogram.MessageHandler" title="pyrogram.MessageHandler"><code class="xref py py-class docutils literal"><span class="pre">MessageHandler</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filters</strong> (<a class="reference internal" href="Filters.html#pyrogram.Filters" title="pyrogram.Filters"><code class="xref py py-obj docutils literal"><span class="pre">Filters</span></code></a>) – Pass one or more filters to allow only a subset of messages to be passed
+in your function.</li>
+<li><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.on_raw_update">
+<code class="descname">on_raw_update</code><span class="sig-paren">(</span><em>group: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.on_raw_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this decorator to automatically register a function for handling
+raw updates. This does the same thing as <a class="reference internal" href="#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal"><span class="pre">add_handler()</span></code></a> using the
+<a class="reference internal" href="handlers/RawUpdateHandler.html#pyrogram.RawUpdateHandler" title="pyrogram.RawUpdateHandler"><code class="xref py py-class docutils literal"><span class="pre">RawUpdateHandler</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – The group identifier, defaults to 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.promote_chat_member">
+<code class="descname">promote_chat_member</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>user_id: int</em>, <em>can_change_info: bool = True</em>, <em>can_post_messages: bool = True</em>, <em>can_edit_messages: bool = True</em>, <em>can_delete_messages: bool = True</em>, <em>can_invite_users: bool = True</em>, <em>can_restrict_members: bool = True</em>, <em>can_pin_messages: bool = True</em>, <em>can_promote_members: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.promote_chat_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to promote or demote a user in a supergroup or a channel.
+You must be an administrator in the chat for this to work and must have the appropriate admin rights.
+Pass False for all boolean parameters to demote a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>user_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target user.
+For a contact that exists in your Telegram address book you can use his phone number (str).</li>
+<li><strong>can_change_info</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can change chat title, photo and other settings.</li>
+<li><strong>can_post_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can create channel posts, channels only.</li>
+<li><strong>can_edit_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can edit messages of other users and can pin messages, channels only.</li>
+<li><strong>can_delete_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can delete messages of other users.</li>
+<li><strong>can_invite_users</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can invite new users to the chat.</li>
+<li><strong>can_restrict_members</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can restrict, ban or unban chat members.</li>
+<li><strong>can_pin_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can pin messages, supergroups only.</li>
+<li><strong>can_promote_members</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the administrator can add new administrators with a subset of his own privileges or
+demote administrators that he has promoted, directly or indirectly (promoted by administrators that
+were appointed by him).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.remove_cloud_password">
+<code class="descname">remove_cloud_password</code><span class="sig-paren">(</span><em>password: str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.remove_cloud_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to turn off the Two-Step Verification security feature (Cloud Password) on your account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>password</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Your current password.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True on success, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.request_callback_answer">
+<code class="descname">request_callback_answer</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>message_id: int</em>, <em>callback_data: str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.request_callback_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to request a callback answer from bots. This is the equivalent of clicking an
+inline button containing callback data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The message id the inline keyboard is attached on.</li>
+<li><strong>callback_data</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Callback data associated with the inline button you want to get the answer from.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The answer containing info useful for clients to display a notification at the top of the chat screen
+or as an alert.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></li>
+<li><code class="docutils literal"><span class="pre">TimeoutError</span></code> – If the bot fails to answer within 10 seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.restrict_chat_member">
+<code class="descname">restrict_chat_member</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>user_id: int</em>, <em>until_date: int = 0</em>, <em>can_send_messages: bool = False</em>, <em>can_send_media_messages: bool = False</em>, <em>can_send_other_messages: bool = False</em>, <em>can_add_web_page_previews: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.restrict_chat_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for
+this to work and must have the appropriate admin rights. Pass True for all boolean parameters to lift
+restrictions from a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>user_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target user.
+For a contact that exists in your Telegram address book you can use his phone number (str).</li>
+<li><strong>until_date</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Date when the user will be unbanned, unix time.
+If user is banned for more than 366 days or less than 30 seconds from the current time they are
+considered to be banned forever. Defaults to 0 (ban forever).</li>
+<li><strong>can_send_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the user can send text messages, contacts, locations and venues.</li>
+<li><strong>can_send_media_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the user can send audios, documents, photos, videos, video notes and voice notes,
+implies can_send_messages.</li>
+<li><strong>can_send_other_messages</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the user can send animations, games, stickers and use inline bots,
+implies can_send_media_messages.</li>
+<li><strong>can_add_web_page_previews</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the user may add web page previews to their messages, implies can_send_media_messages</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_audio">
+<code class="descname">send_audio</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>audio: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>duration: int = 0</em>, <em>performer: str = None</em>, <em>title: str = None</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_audio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send audio files.</p>
+<p>For sending voice messages, use the <a class="reference internal" href="#pyrogram.Client.send_voice" title="pyrogram.Client.send_voice"><code class="xref py py-obj docutils literal"><span class="pre">send_voice()</span></code></a> method instead.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>audio</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Audio file to send.
+Pass a file_id as string to send an audio file that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get an audio file from the Internet, or
+pass a file path as string to upload a new audio file that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Audio caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>duration</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Duration of the audio in seconds.</li>
+<li><strong>performer</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Performer.</li>
+<li><strong>title</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Track name.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_chat_action">
+<code class="descname">send_chat_action</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>action: pyrogram.client.ext.chat_action.ChatAction</em>, <em>progress: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_chat_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method when you need to tell the other party that something is happening on your side.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>action</strong> (<a class="reference internal" href="ChatAction.html#pyrogram.ChatAction" title="pyrogram.ChatAction"><code class="xref py py-obj docutils literal"><span class="pre">ChatAction</span></code></a> | <code class="docutils literal"><span class="pre">str</span></code>) – Type of action to broadcast.
+Choose one from the <a class="reference internal" href="ChatAction.html#pyrogram.ChatAction" title="pyrogram.ChatAction"><code class="xref py py-class docutils literal"><span class="pre">ChatAction</span></code></a> enumeration,
+depending on what the user is about to receive.
+You can also provide a string (e.g. “typing”, “upload_photo”, “record_audio”, …).</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Progress of the upload process.
+Currently useless because official clients don’t seem to be handling this.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, True is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></li>
+<li><code class="docutils literal"><span class="pre">ValueError</span></code> – If the provided string is not a valid ChatAction</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_contact">
+<code class="descname">send_contact</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>phone_number: str</em>, <em>first_name: str</em>, <em>last_name: str = ''</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send phone contacts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>phone_number</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Contact’s phone number.</li>
+<li><strong>first_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Contact’s first name.</li>
+<li><strong>last_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Contact’s last name.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_document">
+<code class="descname">send_document</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>document: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send general files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>document</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – File to send.
+Pass a file_id as string to send a file that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get a file from the Internet, or
+pass a file path as string to upload a new file that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Document caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_gif">
+<code class="descname">send_gif</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>gif: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>duration: int = 0</em>, <em>width: int = 0</em>, <em>height: int = 0</em>, <em>thumb: str = None</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_gif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send GIF files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>gif</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – GIF to send.
+Pass a file_id as string to send a GIF that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get a GIF from the Internet, or
+pass a file path as string to upload a new GIF that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – GIF caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>duration</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Duration of sent GIF in seconds.</li>
+<li><strong>width</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – GIF width.</li>
+<li><strong>height</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – GIF height.</li>
+<li><strong>thumb</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – GIF thumbnail.
+Pass a file path as string to send an image that exists on your local machine.
+Thumbnail should have 90 or less pixels of width and 90 or less pixels of height.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_inline_bot_result">
+<code class="descname">send_inline_bot_result</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>query_id: int</em>, <em>result_id: str</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_inline_bot_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send an inline bot result.
+Bot results can be retrieved using <a class="reference internal" href="#pyrogram.Client.get_inline_bot_results" title="pyrogram.Client.get_inline_bot_results"><code class="xref py py-obj docutils literal"><span class="pre">get_inline_bot_results</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>query_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – Unique identifier for the answered query.</li>
+<li><strong>result_id</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier for the result that was chosen.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent Message is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_location">
+<code class="descname">send_location</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>latitude: float</em>, <em>longitude: float</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send points on the map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>latitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Latitude of the location.</li>
+<li><strong>longitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Longitude of the location.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_media_group">
+<code class="descname">send_media_group</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>media: list</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_media_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send a group of photos or videos as an album.
+On success, an Update containing the sent Messages is returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>media</strong> (<code class="docutils literal"><span class="pre">list</span></code>) – A list containing either <a class="reference internal" href="types/InputMediaPhoto.html#pyrogram.InputMediaPhoto" title="pyrogram.InputMediaPhoto"><code class="xref py py-obj docutils literal"><span class="pre">InputMediaPhoto</span></code></a> or
+<a class="reference internal" href="types/InputMediaVideo.html#pyrogram.InputMediaVideo" title="pyrogram.InputMediaVideo"><code class="xref py py-obj docutils literal"><span class="pre">InputMediaVideo</span></code></a> objects
+describing photos and videos to be sent, must include 2–10 items.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_message">
+<code class="descname">send_message</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>text: str</em>, <em>parse_mode: str = ''</em>, <em>disable_web_page_preview: bool = None</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send text messages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>text</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Text of the message to be sent.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your message.
+Defaults to Markdown.</li>
+<li><strong>disable_web_page_preview</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Disables link previews for links in this message.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent Message is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_photo">
+<code class="descname">send_photo</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>photo: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>ttl_seconds: int = None</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send photos.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>photo</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Photo to send.
+Pass a file_id as string to send a photo that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get a photo from the Internet, or
+pass a file path as string to upload a new photo that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Photo caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>ttl_seconds</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Self-Destruct Timer.
+If you set a timer, the photo will self-destruct in <em>ttl_seconds</em>
+seconds after it was viewed.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_sticker">
+<code class="descname">send_sticker</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>sticker: str</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_sticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send .webp stickers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>sticker</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Sticker to send.
+Pass a file_id as string to send a sticker that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get a .webp sticker file from the Internet, or
+pass a file path as string to upload a new sticker that exists on your local machine.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_venue">
+<code class="descname">send_venue</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>latitude: float</em>, <em>longitude: float</em>, <em>title: str</em>, <em>address: str</em>, <em>foursquare_id: str = ''</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send information about a venue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>latitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Latitude of the venue.</li>
+<li><strong>longitude</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Longitude of the venue.</li>
+<li><strong>title</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Name of the venue.</li>
+<li><strong>address</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Address of the venue.</li>
+<li><strong>foursquare_id</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Foursquare identifier of the venue.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_video">
+<code class="descname">send_video</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>video: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>duration: int = 0</em>, <em>width: int = 0</em>, <em>height: int = 0</em>, <em>thumb: str = None</em>, <em>supports_streaming: bool = True</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send video files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>video</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Video to send.
+Pass a file_id as string to send a video that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get a video from the Internet, or
+pass a file path as string to upload a new video that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Video caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>duration</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Duration of sent video in seconds.</li>
+<li><strong>width</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Video width.</li>
+<li><strong>height</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Video height.</li>
+<li><strong>thumb</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Video thumbnail.
+Pass a file path as string to send an image that exists on your local machine.
+Thumbnail should have 90 or less pixels of width and 90 or less pixels of height.</li>
+<li><strong>supports_streaming</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True, if the uploaded video is suitable for streaming.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_video_note">
+<code class="descname">send_video_note</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>video_note: str</em>, <em>duration: int = 0</em>, <em>length: int = 1</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_video_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send video messages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>video_note</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Video note to send.
+Pass a file_id as string to send a video note that exists on the Telegram servers, or
+pass a file path as string to upload a new video note that exists on your local machine.
+Sending video notes by a URL is currently unsupported.</li>
+<li><strong>duration</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Duration of sent video in seconds.</li>
+<li><strong>length</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Video width and height.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.send_voice">
+<code class="descname">send_voice</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>voice: str</em>, <em>caption: str = ''</em>, <em>parse_mode: str = ''</em>, <em>duration: int = 0</em>, <em>disable_notification: bool = None</em>, <em>reply_to_message_id: int = None</em>, <em>reply_markup=None</em>, <em>progress: &lt;built-in function callable&gt; = None</em>, <em>progress_args: tuple = ()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_voice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to send audio files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+For a contact that exists in your Telegram address book you can use his phone number (str).
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>voice</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – Audio file to send.
+Pass a file_id as string to send an audio that exists on the Telegram servers,
+pass an HTTP URL as a string for Telegram to get an audio from the Internet, or
+pass a file path as string to upload a new audio that exists on your local machine.</li>
+<li><strong>caption</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Voice message caption, 0-200 characters.</li>
+<li><strong>parse_mode</strong> (<code class="docutils literal"><span class="pre">str</span></code>, <em>optional</em>) – Use <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.MARKDOWN" title="pyrogram.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal"><span class="pre">MARKDOWN</span></code></a> or <a class="reference internal" href="ParseMode.html#pyrogram.ParseMode.HTML" title="pyrogram.ParseMode.HTML"><code class="xref py py-obj docutils literal"><span class="pre">HTML</span></code></a>
+if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your caption.
+Defaults to Markdown.</li>
+<li><strong>duration</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – Duration of the voice message in seconds.</li>
+<li><strong>disable_notification</strong> (<code class="docutils literal"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
+Users will receive a notification with no sound.</li>
+<li><strong>reply_to_message_id</strong> (<code class="docutils literal"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message</li>
+<li><strong>reply_markup</strong> (<a class="reference internal" href="types/reply_markup/InlineKeyboardMarkup.html#pyrogram.InlineKeyboardMarkup" title="pyrogram.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardMarkup.html#pyrogram.ReplyKeyboardMarkup" title="pyrogram.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="types/reply_markup/ReplyKeyboardRemove.html#pyrogram.ReplyKeyboardRemove" title="pyrogram.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="types/reply_markup/ForceReply.html#pyrogram.ForceReply" title="pyrogram.ForceReply"><code class="xref py py-obj docutils literal"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</li>
+<li><strong>progress</strong> (<code class="docutils literal"><span class="pre">callable</span></code>, <em>optional</em>) – Pass a callback function to view the upload progress.
+The function must take <em>(client, current, total, *args)</em> as positional arguments (look at the section
+below for a detailed description).</li>
+<li><strong>progress_args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function. Useful, for example, if you want to pass
+a chat_id and a message_id in order to edit a message with the updated progress.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>client</strong> (<a class="reference internal" href="#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal"><span class="pre">Client</span></code></a>) – The Client itself, useful when you want to call other API methods inside the callback function.</li>
+<li><strong>current</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The amount of bytes uploaded so far.</li>
+<li><strong>total</strong> (<code class="docutils literal"><span class="pre">int</span></code>) – The size of the file.</li>
+<li><strong>*args</strong> (<code class="docutils literal"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <em>progress_args</em> parameter.
+You can either keep <em>*args</em> or add every single extra argument in your function signature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">On success, the sent <a class="reference internal" href="types/Message.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal"><span class="pre">Message</span></code></a> is returned.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyrogram.Client.unban_chat_member">
+<code class="descname">unban_chat_member</code><span class="sig-paren">(</span><em>chat_id: int</em>, <em>user_id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.unban_chat_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to unban a previously kicked user in a supergroup or channel.
+The user will <strong>not</strong> return to the group or channel automatically, but will be able to join via link, etc.
+You must be an administrator for this to work.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chat_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
+For a private channel/supergroup you can use its <em>t.me/joinchat/</em> link.</li>
+<li><strong>user_id</strong> (<code class="docutils literal"><span class="pre">int</span></code> | <code class="docutils literal"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target user.
+For a contact that exists in your Telegram address book you can use his phone number (str).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="Error.html#pyrogram.Error" title="pyrogram.Error"><code class="xref py py-class docutils literal"><span class="pre">Error</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="types/index.html" class="btn btn-neutral float-right" title="Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Pyrogram" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2018, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.7.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

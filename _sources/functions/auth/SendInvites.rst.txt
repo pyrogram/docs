@@ -1,0 +1,5 @@
+SendInvites
+===========
+
+.. autoclass:: pyrogram.api.functions.auth.SendInvites
+    :members:

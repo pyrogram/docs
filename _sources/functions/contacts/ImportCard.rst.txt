@@ -1,0 +1,5 @@
+ImportCard
+==========
+
+.. autoclass:: pyrogram.api.functions.contacts.ImportCard
+    :members:

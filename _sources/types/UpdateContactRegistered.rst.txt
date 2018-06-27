@@ -1,0 +1,5 @@
+UpdateContactRegistered
+=======================
+
+.. autoclass:: pyrogram.api.types.UpdateContactRegistered
+    :members:

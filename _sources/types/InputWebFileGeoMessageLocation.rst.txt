@@ -1,0 +1,5 @@
+InputWebFileGeoMessageLocation
+==============================
+
+.. autoclass:: pyrogram.api.types.InputWebFileGeoMessageLocation
+    :members:

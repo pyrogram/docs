@@ -1,0 +1,19 @@
+Help
+====
+
+.. module:: pyrogram.api.types.help
+
+.. toctree::
+    AppUpdate
+    ConfigSimple
+    DeepLinkInfo
+    DeepLinkInfoEmpty
+    InviteText
+    NoAppUpdate
+    ProxyDataEmpty
+    ProxyDataPromo
+    RecentMeUrls
+    Support
+    TermsOfService
+    TermsOfServiceUpdate
+    TermsOfServiceUpdateEmpty
