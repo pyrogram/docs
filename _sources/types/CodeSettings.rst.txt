@@ -1,0 +1,5 @@
+CodeSettings
+============
+
+.. autoclass:: pyrogram.api.types.CodeSettings
+    :members:

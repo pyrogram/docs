@@ -1,0 +1,5 @@
+ChatBannedRights
+================
+
+.. autoclass:: pyrogram.api.types.ChatBannedRights
+    :members:

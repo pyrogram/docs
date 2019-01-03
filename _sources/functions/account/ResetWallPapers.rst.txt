@@ -1,0 +1,5 @@
+ResetWallPapers
+===============
+
+.. autoclass:: pyrogram.api.functions.account.ResetWallPapers
+    :members:

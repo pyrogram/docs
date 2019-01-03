@@ -1,0 +1,19 @@
+Account
+=======
+
+.. module:: pyrogram.api.types.account
+
+.. toctree::
+    AuthorizationForm
+    Authorizations
+    AutoDownloadSettings
+    Password
+    PasswordInputSettings
+    PasswordSettings
+    PrivacyRules
+    SentEmailCode
+    Takeout
+    TmpPassword
+    WallPapers
+    WallPapersNotModified
+    WebAuthorizations

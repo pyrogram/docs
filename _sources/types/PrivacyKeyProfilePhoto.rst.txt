@@ -1,0 +1,5 @@
+PrivacyKeyProfilePhoto
+======================
+
+.. autoclass:: pyrogram.api.types.PrivacyKeyProfilePhoto
+    :members:

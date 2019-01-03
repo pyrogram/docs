@@ -1,0 +1,5 @@
+PrivacyKeyForwards
+==================
+
+.. autoclass:: pyrogram.api.types.PrivacyKeyForwards
+    :members:

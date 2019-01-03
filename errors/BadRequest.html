@@ -1,0 +1,2411 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>400 - Bad Request &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/errors/BadRequest.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="401 - Unauthorized" href="Unauthorized.html" />
+    <link rel="prev" title="303 - See Other" href="SeeOther.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/4E0uKSE.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.12.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#asynchronous">Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-add-handler">Using add_handler()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-decorators">Using Decorators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UsingFilters.html">Using Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#custom-filters">Custom Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#basic-filters">Basic Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#filters-with-arguments">Filters with Arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/MoreOnUpdates.html">More on Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#handler-groups">Handler Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#update-propagation">Update propagation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#stop-propagation">Stop Propagation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#continue-propagation">Continue Propagation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ConfigurationFile.html">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#the-config-ini-file">The config.ini File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#configuration-sections">Configuration Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#pyrogram">Pyrogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SmartPlugins.html">Smart Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#using-smart-plugins">Using Smart Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#specifying-the-plugins-to-include">Specifying the Plugins to include</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#load-unload-plugins-at-runtime">Load/Unload Plugins at Runtime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#unloading">Unloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#loading">Loading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">Fast Crypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TestServers.html">Test Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-mode-in-official-apps">Test Mode in Official Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-numbers">Test Numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AdvancedUsage.html">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AdvancedUsage.html#telegram-raw-api">Telegram Raw API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#invoking-functions">Invoking Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#chat-ids">Chat IDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/VoiceCalls.html">Voice Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/Changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#utilities">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#decorators">Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#chats">Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#password">Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#bots">Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Types.html">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#users-chats">Users &amp; Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#messages-media">Messages &amp; Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#bots">Bots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#input-media">Input Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inputmessagecontent">InputMessageContent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Handlers.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyrogram/RPCError.html">RPCError</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="SeeOther.html">303 - See Other</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">400 - Bad Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unauthorized.html">401 - Unauthorized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Forbidden.html">403 - Forbidden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NotAcceptable.html">406 - Not Acceptable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flood.html">420 - Flood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InternalServerError.html">500 - Internal Server Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UnknownError.html">520 - Unknown Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyrogram/index.html">Pyrogram</a> &raquo;</li>
+        
+          <li><a href="../pyrogram/RPCError.html">RPCError</a> &raquo;</li>
+        
+      <li>400 - Bad Request</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyrogram.errors.BadRequest">
+<span id="bad-request"></span><h1>400 - Bad Request<a class="headerlink" href="#module-pyrogram.errors.BadRequest" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-pyrogram.errors.exceptions.bad_request_400"></span><dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BadRequest">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">BadRequest</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bad Request</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BadRequest.CODE">
+<code class="descname">CODE</code><em class="property"> = 400</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BadRequest.CODE" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error Code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FirstnameInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FirstnameInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FirstnameInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The first name is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FirstnameInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'FIRSTNAME_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FirstnameInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LastnameInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">LastnameInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LastnameInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The last name is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LastnameInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'LASTNAME_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LastnameInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneNumberInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The phone number is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_NUMBER_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeHashEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneCodeHashEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeHashEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>phone_code_hash is missing</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeHashEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_CODE_HASH_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeHashEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneCodeEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>phone_code is missing</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_CODE_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeExpired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneCodeExpired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeExpired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The confirmation code has expired</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeExpired.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_CODE_EXPIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeExpired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneCodeInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The confirmation code is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneCodeInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_CODE_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneCodeInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ApiIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ApiIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ApiIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The api_id/api_hash combination is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ApiIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'API_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ApiIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberOccupied">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneNumberOccupied</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberOccupied" title="Permalink to this definition">¶</a></dt>
+<dd><p>The phone number is already in use</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberOccupied.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_NUMBER_OCCUPIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberOccupied.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberUnoccupied">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneNumberUnoccupied</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberUnoccupied" title="Permalink to this definition">¶</a></dt>
+<dd><p>The phone number is not yet being used</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberUnoccupied.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_NUMBER_UNOCCUPIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberUnoccupied.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsersTooFew">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsersTooFew</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsersTooFew" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not enough users (to create a chat, for example)</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsersTooFew.ID">
+<code class="descname">ID</code><em class="property"> = 'USERS_TOO_FEW'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsersTooFew.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsersTooMuch">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsersTooMuch</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsersTooMuch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum number of users has been exceeded (to create a chat, for example)</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsersTooMuch.ID">
+<code class="descname">ID</code><em class="property"> = 'USERS_TOO_MUCH'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsersTooMuch.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TypeConstructorInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">TypeConstructorInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TypeConstructorInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The type constructor is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TypeConstructorInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'TYPE_CONSTRUCTOR_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TypeConstructorInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FilePartInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file part number is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'FILE_PART_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartsInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FilePartsInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartsInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of file parts is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartsInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'FILE_PARTS_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartsInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartMissing">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FilePartMissing</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartMissing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part {x} of the file is missing from storage</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FilePartMissing.ID">
+<code class="descname">ID</code><em class="property"> = 'FILE_PART_X_MISSING'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FilePartMissing.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.Md5ChecksumInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">Md5ChecksumInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.Md5ChecksumInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The MD5 checksums do not match</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.Md5ChecksumInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'MD5_CHECKSUM_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.Md5ChecksumInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhotoInvalidDimensions">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhotoInvalidDimensions</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhotoInvalidDimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>The photo dimensions are invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhotoInvalidDimensions.ID">
+<code class="descname">ID</code><em class="property"> = 'PHOTO_INVALID_DIMENSIONS'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhotoInvalidDimensions.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FieldNameInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FieldNameInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FieldNameInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The field with the name FIELD_NAME is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FieldNameInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'FIELD_NAME_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FieldNameInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FieldNameEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FieldNameEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FieldNameEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The field with the name FIELD_NAME is missing</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FieldNameEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'FIELD_NAME_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FieldNameEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MsgWaitFailed">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MsgWaitFailed</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MsgWaitFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>A waiting call returned an error</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MsgWaitFailed.ID">
+<code class="descname">ID</code><em class="property"> = 'MSG_WAIT_FAILED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MsgWaitFailed.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PeerIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id/access_hash combination is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'PEER_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessageEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message sent is empty</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EncryptedMessageInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">EncryptedMessageInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EncryptedMessageInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The special binding message (bind_auth_key_inner) contains invalid data</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EncryptedMessageInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'ENCRYPTED_MESSAGE_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EncryptedMessageInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InputMethodInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">InputMethodInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InputMethodInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method called is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InputMethodInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'INPUT_METHOD_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InputMethodInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordHashInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PasswordHashInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordHashInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Two-step verification password is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordHashInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'PASSWORD_HASH_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordHashInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsernameNotOccupied</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username is not occupied by anyone</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied.ID">
+<code class="descname">ID</code><em class="property"> = 'USERNAME_NOT_OCCUPIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsernameInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'USERNAME_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessageIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message id is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageNotModified">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessageNotModified</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageNotModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message was not modified</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageNotModified.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_NOT_MODIFIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageNotModified.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EntityMentionUserInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">EntityMentionUserInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EntityMentionUserInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mentioned entity is not an user</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EntityMentionUserInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'ENTITY_MENTION_USER_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EntityMentionUserInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageTooLong">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessageTooLong</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageTooLong" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message text is over 4096 characters</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageTooLong.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_TOO_LONG'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageTooLong.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AccessTokenExpired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">AccessTokenExpired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AccessTokenExpired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bot token is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AccessTokenExpired.ID">
+<code class="descname">ID</code><em class="property"> = 'ACCESS_TOKEN_EXPIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AccessTokenExpired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotMethodInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">BotMethodInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotMethodInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method can’t be used by bots</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotMethodInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'BOT_METHOD_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotMethodInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.QueryTooShort">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">QueryTooShort</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.QueryTooShort" title="Permalink to this definition">¶</a></dt>
+<dd><p>The query is too short</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.QueryTooShort.ID">
+<code class="descname">ID</code><em class="property"> = 'QUERY_TOO_SHORT'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.QueryTooShort.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.SearchQueryEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">SearchQueryEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.SearchQueryEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The query is empty</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.SearchQueryEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'SEARCH_QUERY_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.SearchQueryEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ChatIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chat id is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'CHAT_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.DateEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">DateEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.DateEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The date argument is empty</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.DateEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'DATE_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.DateEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PersistentTimestampEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PersistentTimestampEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PersistentTimestampEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pts is empty</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PersistentTimestampEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'PERSISTENT_TIMESTAMP_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PersistentTimestampEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CdnMethodInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">CdnMethodInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CdnMethodInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method can’t be used on CDN DCs</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CdnMethodInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'CDN_METHOD_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CdnMethodInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.VolumeLocNotFound">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">VolumeLocNotFound</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.VolumeLocNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>The volume location can’t be found</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.VolumeLocNotFound.ID">
+<code class="descname">ID</code><em class="property"> = 'VOLUME_LOC_NOT_FOUND'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.VolumeLocNotFound.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FileIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">FileIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FileIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file id is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.FileIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'FILE_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.FileIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LocationInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">LocationInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LocationInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file location is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LocationInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'LOCATION_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LocationInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatAdminRequired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ChatAdminRequired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatAdminRequired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method requires chat admin privileges</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatAdminRequired.ID">
+<code class="descname">ID</code><em class="property"> = 'CHAT_ADMIN_REQUIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatAdminRequired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberBanned">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneNumberBanned</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberBanned" title="Permalink to this definition">¶</a></dt>
+<dd><p>The phone number is banned</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberBanned.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_NUMBER_BANNED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberBanned.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AboutTooLong">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">AboutTooLong</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AboutTooLong" title="Permalink to this definition">¶</a></dt>
+<dd><p>The about text is too long</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AboutTooLong.ID">
+<code class="descname">ID</code><em class="property"> = 'ABOUT_TOO_LONG'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AboutTooLong.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MultiMediaTooLong">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MultiMediaTooLong</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MultiMediaTooLong" title="Permalink to this definition">¶</a></dt>
+<dd><p>The album contains more than 10 items</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MultiMediaTooLong.ID">
+<code class="descname">ID</code><em class="property"> = 'MULTI_MEDIA_TOO_LONG'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MultiMediaTooLong.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameOccupied">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsernameOccupied</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameOccupied" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username is already in use</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameOccupied.ID">
+<code class="descname">ID</code><em class="property"> = 'USERNAME_OCCUPIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameOccupied.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotInlineDisabled">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">BotInlineDisabled</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotInlineDisabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>The inline feature of the bot is disabled</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotInlineDisabled.ID">
+<code class="descname">ID</code><em class="property"> = 'BOT_INLINE_DISABLED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotInlineDisabled.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InlineResultExpired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">InlineResultExpired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InlineResultExpired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The inline bot query expired</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InlineResultExpired.ID">
+<code class="descname">ID</code><em class="property"> = 'INLINE_RESULT_EXPIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InlineResultExpired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InviteHashInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">InviteHashInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InviteHashInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The invite link hash is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InviteHashInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'INVITE_HASH_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InviteHashInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserAlreadyParticipant">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserAlreadyParticipant</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserAlreadyParticipant" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user is already a participant of this chat</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserAlreadyParticipant.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_ALREADY_PARTICIPANT'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserAlreadyParticipant.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TtlMediaInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">TtlMediaInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TtlMediaInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The media does not support self-destruction</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TtlMediaInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'TTL_MEDIA_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TtlMediaInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MaxIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MaxIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MaxIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The max_id parameter is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MaxIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'MAX_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MaxIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChannelInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ChannelInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChannelInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The channel parameter is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChannelInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'CHANNEL_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChannelInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.DcIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">DcIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.DcIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dc_id parameter is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.DcIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'DC_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.DcIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LimitInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">LimitInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LimitInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The limit parameter is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.LimitInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'LIMIT_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.LimitInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.OffsetInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">OffsetInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.OffsetInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The offset parameter is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.OffsetInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'OFFSET_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.OffsetInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EmailInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">EmailInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EmailInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email provided is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.EmailInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'EMAIL_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.EmailInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserIsBot">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserIsBot</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserIsBot" title="Permalink to this definition">¶</a></dt>
+<dd><p>A bot cannot send messages to other bots or to itself</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserIsBot.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_IS_BOT'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserIsBot.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.WebpageCurlFailed">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">WebpageCurlFailed</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.WebpageCurlFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Telegram server could not fetch the provided URL</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.WebpageCurlFailed.ID">
+<code class="descname">ID</code><em class="property"> = 'WEBPAGE_CURL_FAILED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.WebpageCurlFailed.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.StickersetInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">StickersetInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.StickersetInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The requested sticker set is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.StickersetInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'STICKERSET_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.StickersetInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PeerFlood">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PeerFlood</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PeerFlood" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method can’t be used because your account is limited</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PeerFlood.ID">
+<code class="descname">ID</code><em class="property"> = 'PEER_FLOOD'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PeerFlood.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaCaptionTooLong">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MediaCaptionTooLong</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaCaptionTooLong" title="Permalink to this definition">¶</a></dt>
+<dd><p>The media caption is longer than 1024 characters</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaCaptionTooLong.ID">
+<code class="descname">ID</code><em class="property"> = 'MEDIA_CAPTION_TOO_LONG'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaCaptionTooLong.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserNotMutualContact">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserNotMutualContact</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserNotMutualContact" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user is not a mutual contact</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserNotMutualContact.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_NOT_MUTUAL_CONTACT'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserNotMutualContact.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserChannelsTooMuch">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserChannelsTooMuch</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserChannelsTooMuch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user is already in too many channels or supergroups</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserChannelsTooMuch.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_CHANNELS_TOO_MUCH'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserChannelsTooMuch.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ApiIdPublishedFlood">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ApiIdPublishedFlood</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ApiIdPublishedFlood" title="Permalink to this definition">¶</a></dt>
+<dd><p>You are using an API key that is limited on the server side</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ApiIdPublishedFlood.ID">
+<code class="descname">ID</code><em class="property"> = 'API_ID_PUBLISHED_FLOOD'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ApiIdPublishedFlood.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserNotParticipant">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserNotParticipant</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserNotParticipant" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user is not a member of this chat</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserNotParticipant.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_NOT_PARTICIPANT'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserNotParticipant.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChannelPrivate">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ChannelPrivate</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChannelPrivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The channel/supergroup is not accessible</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChannelPrivate.ID">
+<code class="descname">ID</code><em class="property"> = 'CHANNEL_PRIVATE'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChannelPrivate.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageIdsEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessageIdsEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageIdsEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The requested message doesn’t exist</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessageIdsEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_IDS_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessageIdsEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">WebpageMediaEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The URL doesn’t contain any valid media</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'WEBPAGE_MEDIA_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.QueryIdInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">QueryIdInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.QueryIdInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The callback query id is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.QueryIdInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'QUERY_ID_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.QueryIdInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MediaEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The media is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'MEDIA_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserIsBlocked">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserIsBlocked</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserIsBlocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user blocked you</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserIsBlocked.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_IS_BLOCKED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserIsBlocked.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.YouBlockedUser">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">YouBlockedUser</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.YouBlockedUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>You blocked this user</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.YouBlockedUser.ID">
+<code class="descname">ID</code><em class="property"> = 'YOU_BLOCKED_USER'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.YouBlockedUser.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AdminsTooMuch">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">AdminsTooMuch</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AdminsTooMuch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chat has too many administrators</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AdminsTooMuch.ID">
+<code class="descname">ID</code><em class="property"> = 'ADMINS_TOO_MUCH'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AdminsTooMuch.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotsTooMuch">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">BotsTooMuch</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotsTooMuch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chat has too many bots</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotsTooMuch.ID">
+<code class="descname">ID</code><em class="property"> = 'BOTS_TOO_MUCH'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotsTooMuch.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserAdminInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserAdminInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserAdminInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The action requires admin privileges</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserAdminInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_ADMIN_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserAdminInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InputUserDeactivated">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">InputUserDeactivated</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InputUserDeactivated" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target user has been deactivated</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.InputUserDeactivated.ID">
+<code class="descname">ID</code><em class="property"> = 'INPUT_USER_DEACTIVATED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.InputUserDeactivated.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordRecoveryNa">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PasswordRecoveryNa</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordRecoveryNa" title="Permalink to this definition">¶</a></dt>
+<dd><p>The password recovery e-mail is not available</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordRecoveryNa.ID">
+<code class="descname">ID</code><em class="property"> = 'PASSWORD_RECOVERY_NA'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordRecoveryNa.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordEmpty">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PasswordEmpty</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The password entered is empty</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PasswordEmpty.ID">
+<code class="descname">ID</code><em class="property"> = 'PASSWORD_EMPTY'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PasswordEmpty.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberFlood">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhoneNumberFlood</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberFlood" title="Permalink to this definition">¶</a></dt>
+<dd><p>This number has tried to login too many times</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhoneNumberFlood.ID">
+<code class="descname">ID</code><em class="property"> = 'PHONE_NUMBER_FLOOD'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhoneNumberFlood.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TakeoutInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">TakeoutInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TakeoutInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The takeout id is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TakeoutInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'TAKEOUT_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TakeoutInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TakeoutRequired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">TakeoutRequired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TakeoutRequired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method must be invoked inside a takeout session</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.TakeoutRequired.ID">
+<code class="descname">ID</code><em class="property"> = 'TAKEOUT_REQUIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.TakeoutRequired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessagePollClosed">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MessagePollClosed</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessagePollClosed" title="Permalink to this definition">¶</a></dt>
+<dd><p>You can’t interact with a closed poll</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MessagePollClosed.ID">
+<code class="descname">ID</code><em class="property"> = 'MESSAGE_POLL_CLOSED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MessagePollClosed.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">MediaInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The media is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.MediaInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'MEDIA_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.MediaInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotScoreNotModified">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">BotScoreNotModified</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotScoreNotModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bot score was not modified</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.BotScoreNotModified.ID">
+<code class="descname">ID</code><em class="property"> = 'BOT_SCORE_NOT_MODIFIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.BotScoreNotModified.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserBotRequired">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UserBotRequired</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserBotRequired" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method can be used by bots only</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UserBotRequired.ID">
+<code class="descname">ID</code><em class="property"> = 'USER_BOT_REQUIRED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UserBotRequired.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ImageProcessFailed">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ImageProcessFailed</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ImageProcessFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The server failed to process your image</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ImageProcessFailed.ID">
+<code class="descname">ID</code><em class="property"> = 'IMAGE_PROCESS_FAILED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ImageProcessFailed.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameNotModified">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">UsernameNotModified</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameNotModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username was not modified</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.UsernameNotModified.ID">
+<code class="descname">ID</code><em class="property"> = 'USERNAME_NOT_MODIFIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.UsernameNotModified.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CallAlreadyAccepted">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">CallAlreadyAccepted</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CallAlreadyAccepted" title="Permalink to this definition">¶</a></dt>
+<dd><p>The call is already accepted</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CallAlreadyAccepted.ID">
+<code class="descname">ID</code><em class="property"> = 'CALL_ALREADY_ACCEPTED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CallAlreadyAccepted.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CallAlreadyDeclined">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">CallAlreadyDeclined</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CallAlreadyDeclined" title="Permalink to this definition">¶</a></dt>
+<dd><p>The call is already declined</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.CallAlreadyDeclined.ID">
+<code class="descname">ID</code><em class="property"> = 'CALL_ALREADY_DECLINED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.CallAlreadyDeclined.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhotoExtInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">PhotoExtInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhotoExtInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The photo extension is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.PhotoExtInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'PHOTO_EXT_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.PhotoExtInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ExternalUrlInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ExternalUrlInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ExternalUrlInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The external media URL is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ExternalUrlInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'EXTERNAL_URL_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ExternalUrlInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatNotModified">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ChatNotModified</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatNotModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chat settings were not modified</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ChatNotModified.ID">
+<code class="descname">ID</code><em class="property"> = 'CHAT_NOT_MODIFIED'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ChatNotModified.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ResultsTooMuch">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ResultsTooMuch</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ResultsTooMuch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result contains too many items</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ResultsTooMuch.ID">
+<code class="descname">ID</code><em class="property"> = 'RESULTS_TOO_MUCH'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ResultsTooMuch.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ResultIdDuplicate">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">ResultIdDuplicate</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ResultIdDuplicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result contains items with duplicated identifiers</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.ResultIdDuplicate.ID">
+<code class="descname">ID</code><em class="property"> = 'RESULT_ID_DUPLICATE'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.ResultIdDuplicate.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AccessTokenInvalid">
+<em class="property">exception </em><code class="descclassname">pyrogram.errors.exceptions.bad_request_400.</code><code class="descname">AccessTokenInvalid</code><span class="sig-paren">(</span><em>x: int = None</em>, <em>query_type: type = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AccessTokenInvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bot access token is invalid</p>
+<dl class="attribute">
+<dt id="pyrogram.errors.exceptions.bad_request_400.AccessTokenInvalid.ID">
+<code class="descname">ID</code><em class="property"> = 'ACCESS_TOKEN_INVALID'</em><a class="headerlink" href="#pyrogram.errors.exceptions.bad_request_400.AccessTokenInvalid.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Error ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Unauthorized.html" class="btn btn-neutral float-right" title="401 - Unauthorized" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SeeOther.html" class="btn btn-neutral" title="303 - See Other" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2019, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.12.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+InputWallPaper
+==============
+
+.. autoclass:: pyrogram.api.types.InputWallPaper
+    :members:

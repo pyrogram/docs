@@ -1,0 +1,5 @@
+WallPaperSettings
+=================
+
+.. autoclass:: pyrogram.api.types.WallPaperSettings
+    :members:

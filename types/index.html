@@ -1,0 +1,1236 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Types &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/types/index.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Account" href="account/index.html" />
+    <link rel="prev" title="SetClientDHParams" href="../functions/SetClientDHParams.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/4E0uKSE.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.12.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#asynchronous">Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-add-handler">Using add_handler()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-decorators">Using Decorators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UsingFilters.html">Using Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#custom-filters">Custom Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#basic-filters">Basic Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#filters-with-arguments">Filters with Arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/MoreOnUpdates.html">More on Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#handler-groups">Handler Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#update-propagation">Update propagation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#stop-propagation">Stop Propagation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#continue-propagation">Continue Propagation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ConfigurationFile.html">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#the-config-ini-file">The config.ini File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#configuration-sections">Configuration Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#pyrogram">Pyrogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SmartPlugins.html">Smart Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#using-smart-plugins">Using Smart Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#specifying-the-plugins-to-include">Specifying the Plugins to include</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#load-unload-plugins-at-runtime">Load/Unload Plugins at Runtime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#unloading">Unloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#loading">Loading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">Fast Crypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TestServers.html">Test Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-mode-in-official-apps">Test Mode in Official Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-numbers">Test Numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AdvancedUsage.html">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AdvancedUsage.html#telegram-raw-api">Telegram Raw API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#invoking-functions">Invoking Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#chat-ids">Chat IDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/VoiceCalls.html">Voice Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/Changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#utilities">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#decorators">Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#chats">Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#password">Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#bots">Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Types.html">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#users-chats">Users &amp; Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#messages-media">Messages &amp; Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#bots">Bots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#input-media">Input Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inputmessagecontent">InputMessageContent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Handlers.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/RPCError.html">RPCError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../errors/SeeOther.html">303 - See Other</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/BadRequest.html">400 - Bad Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Unauthorized.html">401 - Unauthorized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Forbidden.html">403 - Forbidden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/NotAcceptable.html">406 - Not Acceptable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Flood.html">420 - Flood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/InternalServerError.html">500 - Internal Server Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/UnknownError.html">520 - Unknown Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyrogram.api.types">
+<span id="types"></span><h1>Types<a class="headerlink" href="#module-pyrogram.api.types" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="account/index.html">Account</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="account/AuthorizationForm.html">AuthorizationForm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/Authorizations.html">Authorizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/AutoDownloadSettings.html">AutoDownloadSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/Password.html">Password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/PasswordInputSettings.html">PasswordInputSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/PasswordSettings.html">PasswordSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/PrivacyRules.html">PrivacyRules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/SentEmailCode.html">SentEmailCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/Takeout.html">Takeout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/TmpPassword.html">TmpPassword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/WallPapers.html">WallPapers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/WallPapersNotModified.html">WallPapersNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/WebAuthorizations.html">WebAuthorizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auth/index.html">Auth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auth/Authorization.html">Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/CheckedPhone.html">CheckedPhone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/CodeTypeCall.html">CodeTypeCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/CodeTypeFlashCall.html">CodeTypeFlashCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/CodeTypeSms.html">CodeTypeSms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/ExportedAuthorization.html">ExportedAuthorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/PasswordRecovery.html">PasswordRecovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/SentCode.html">SentCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/SentCodeTypeApp.html">SentCodeTypeApp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/SentCodeTypeCall.html">SentCodeTypeCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/SentCodeTypeFlashCall.html">SentCodeTypeFlashCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/SentCodeTypeSms.html">SentCodeTypeSms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channels/index.html">Channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channels/AdminLogResults.html">AdminLogResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels/ChannelParticipant.html">ChannelParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels/ChannelParticipants.html">ChannelParticipants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels/ChannelParticipantsNotModified.html">ChannelParticipantsNotModified</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contacts/index.html">Contacts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contacts/Blocked.html">Blocked</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/BlockedSlice.html">BlockedSlice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/Contacts.html">Contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/ContactsNotModified.html">ContactsNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/Found.html">Found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/ImportedContacts.html">ImportedContacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/Link.html">Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/ResolvedPeer.html">ResolvedPeer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/TopPeers.html">TopPeers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/TopPeersDisabled.html">TopPeersDisabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/TopPeersNotModified.html">TopPeersNotModified</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="help/index.html">Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="help/AppUpdate.html">AppUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/ConfigSimple.html">ConfigSimple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/DeepLinkInfo.html">DeepLinkInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/DeepLinkInfoEmpty.html">DeepLinkInfoEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/InviteText.html">InviteText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/NoAppUpdate.html">NoAppUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/PassportConfig.html">PassportConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/PassportConfigNotModified.html">PassportConfigNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/ProxyDataEmpty.html">ProxyDataEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/ProxyDataPromo.html">ProxyDataPromo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/RecentMeUrls.html">RecentMeUrls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/Support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/SupportName.html">SupportName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/TermsOfService.html">TermsOfService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/TermsOfServiceUpdate.html">TermsOfServiceUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/TermsOfServiceUpdateEmpty.html">TermsOfServiceUpdateEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/UserInfo.html">UserInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/UserInfoEmpty.html">UserInfoEmpty</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messages/index.html">Messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="messages/AffectedHistory.html">AffectedHistory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/AffectedMessages.html">AffectedMessages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/AllStickers.html">AllStickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/AllStickersNotModified.html">AllStickersNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/ArchivedStickers.html">ArchivedStickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/BotCallbackAnswer.html">BotCallbackAnswer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/BotResults.html">BotResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/ChannelMessages.html">ChannelMessages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/ChatFull.html">ChatFull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/Chats.html">Chats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/ChatsSlice.html">ChatsSlice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/DhConfig.html">DhConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/DhConfigNotModified.html">DhConfigNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/Dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/DialogsNotModified.html">DialogsNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/DialogsSlice.html">DialogsSlice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FavedStickers.html">FavedStickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FavedStickersNotModified.html">FavedStickersNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FeaturedStickers.html">FeaturedStickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FeaturedStickersNotModified.html">FeaturedStickersNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FoundGifs.html">FoundGifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FoundStickerSets.html">FoundStickerSets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/FoundStickerSetsNotModified.html">FoundStickerSetsNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/HighScores.html">HighScores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/MessageEditData.html">MessageEditData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/Messages.html">Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/MessagesNotModified.html">MessagesNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/MessagesSlice.html">MessagesSlice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/PeerDialogs.html">PeerDialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/RecentStickers.html">RecentStickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/RecentStickersNotModified.html">RecentStickersNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/SavedGifs.html">SavedGifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/SavedGifsNotModified.html">SavedGifsNotModified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/SentEncryptedFile.html">SentEncryptedFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/SentEncryptedMessage.html">SentEncryptedMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/StickerSet.html">StickerSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/StickerSetInstallResultArchive.html">StickerSetInstallResultArchive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/StickerSetInstallResultSuccess.html">StickerSetInstallResultSuccess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/Stickers.html">Stickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/StickersNotModified.html">StickersNotModified</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payments/index.html">Payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payments/PaymentForm.html">PaymentForm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/PaymentReceipt.html">PaymentReceipt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/PaymentResult.html">PaymentResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/PaymentVerficationNeeded.html">PaymentVerficationNeeded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/SavedInfo.html">SavedInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/ValidatedRequestedInfo.html">ValidatedRequestedInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone/index.html">Phone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone/PhoneCall.html">PhoneCall</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="photos/index.html">Photos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="photos/Photo.html">Photo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photos/Photos.html">Photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photos/PhotosSlice.html">PhotosSlice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="storage/index.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileGif.html">FileGif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileJpeg.html">FileJpeg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileMov.html">FileMov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileMp3.html">FileMp3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileMp4.html">FileMp4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FilePartial.html">FilePartial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FilePdf.html">FilePdf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FilePng.html">FilePng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileUnknown.html">FileUnknown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/FileWebp.html">FileWebp</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates/index.html">Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates/ChannelDifference.html">ChannelDifference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/ChannelDifferenceEmpty.html">ChannelDifferenceEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/ChannelDifferenceTooLong.html">ChannelDifferenceTooLong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/Difference.html">Difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/DifferenceEmpty.html">DifferenceEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/DifferenceSlice.html">DifferenceSlice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/DifferenceTooLong.html">DifferenceTooLong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates/State.html">State</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload/index.html">Upload</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upload/CdnFile.html">CdnFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upload/CdnFileReuploadNeeded.html">CdnFileReuploadNeeded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upload/File.html">File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upload/FileCdnRedirect.html">FileCdnRedirect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upload/WebFile.html">WebFile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AccessPointRule.html">AccessPointRule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AccountDaysTTL.html">AccountDaysTTL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AutoDownloadSettings.html">AutoDownloadSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BadMsgNotification.html">BadMsgNotification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BadServerSalt.html">BadServerSalt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BindAuthKeyInner.html">BindAuthKeyInner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotCommand.html">BotCommand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInfo.html">BotInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMediaResult.html">BotInlineMediaResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMessageMediaAuto.html">BotInlineMessageMediaAuto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMessageMediaContact.html">BotInlineMessageMediaContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMessageMediaGeo.html">BotInlineMessageMediaGeo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMessageMediaVenue.html">BotInlineMessageMediaVenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineMessageText.html">BotInlineMessageText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BotInlineResult.html">BotInlineResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CdnConfig.html">CdnConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CdnPublicKey.html">CdnPublicKey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEvent.html">ChannelAdminLogEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionChangeAbout.html">ChannelAdminLogEventActionChangeAbout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionChangePhoto.html">ChannelAdminLogEventActionChangePhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionChangeStickerSet.html">ChannelAdminLogEventActionChangeStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionChangeTitle.html">ChannelAdminLogEventActionChangeTitle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionChangeUsername.html">ChannelAdminLogEventActionChangeUsername</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionDefaultBannedRights.html">ChannelAdminLogEventActionDefaultBannedRights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionDeleteMessage.html">ChannelAdminLogEventActionDeleteMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionEditMessage.html">ChannelAdminLogEventActionEditMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionParticipantInvite.html">ChannelAdminLogEventActionParticipantInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionParticipantJoin.html">ChannelAdminLogEventActionParticipantJoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionParticipantLeave.html">ChannelAdminLogEventActionParticipantLeave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionParticipantToggleAdmin.html">ChannelAdminLogEventActionParticipantToggleAdmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionParticipantToggleBan.html">ChannelAdminLogEventActionParticipantToggleBan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionStopPoll.html">ChannelAdminLogEventActionStopPoll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionToggleInvites.html">ChannelAdminLogEventActionToggleInvites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionTogglePreHistoryHidden.html">ChannelAdminLogEventActionTogglePreHistoryHidden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionToggleSignatures.html">ChannelAdminLogEventActionToggleSignatures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventActionUpdatePinned.html">ChannelAdminLogEventActionUpdatePinned</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelAdminLogEventsFilter.html">ChannelAdminLogEventsFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelForbidden.html">ChannelForbidden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelFull.html">ChannelFull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelMessagesFilter.html">ChannelMessagesFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelMessagesFilterEmpty.html">ChannelMessagesFilterEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipant.html">ChannelParticipant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantAdmin.html">ChannelParticipantAdmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantBanned.html">ChannelParticipantBanned</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantCreator.html">ChannelParticipantCreator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantSelf.html">ChannelParticipantSelf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsAdmins.html">ChannelParticipantsAdmins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsBanned.html">ChannelParticipantsBanned</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsBots.html">ChannelParticipantsBots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsContacts.html">ChannelParticipantsContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsKicked.html">ChannelParticipantsKicked</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsRecent.html">ChannelParticipantsRecent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChannelParticipantsSearch.html">ChannelParticipantsSearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chat.html">Chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatAdminRights.html">ChatAdminRights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatBannedRights.html">ChatBannedRights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatEmpty.html">ChatEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatForbidden.html">ChatForbidden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatFull.html">ChatFull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatInvite.html">ChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatInviteAlready.html">ChatInviteAlready</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatInviteEmpty.html">ChatInviteEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatInviteExported.html">ChatInviteExported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatOnlines.html">ChatOnlines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatParticipant.html">ChatParticipant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatParticipantAdmin.html">ChatParticipantAdmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatParticipantCreator.html">ChatParticipantCreator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatParticipants.html">ChatParticipants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatParticipantsForbidden.html">ChatParticipantsForbidden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatPhoto.html">ChatPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChatPhotoEmpty.html">ChatPhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClientDHInnerData.html">ClientDHInnerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeSettings.html">CodeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactBlocked.html">ContactBlocked</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactLinkContact.html">ContactLinkContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactLinkHasPhone.html">ContactLinkHasPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactLinkNone.html">ContactLinkNone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactLinkUnknown.html">ContactLinkUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContactStatus.html">ContactStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataJSON.html">DataJSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DcOption.html">DcOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DestroyAuthKeyFail.html">DestroyAuthKeyFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DestroyAuthKeyNone.html">DestroyAuthKeyNone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DestroyAuthKeyOk.html">DestroyAuthKeyOk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DestroySessionNone.html">DestroySessionNone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DestroySessionOk.html">DestroySessionOk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DhGenFail.html">DhGenFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DhGenOk.html">DhGenOk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DhGenRetry.html">DhGenRetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dialog.html">Dialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DialogPeer.html">DialogPeer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Document.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeAnimated.html">DocumentAttributeAnimated</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeAudio.html">DocumentAttributeAudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeFilename.html">DocumentAttributeFilename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeHasStickers.html">DocumentAttributeHasStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeImageSize.html">DocumentAttributeImageSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeSticker.html">DocumentAttributeSticker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentAttributeVideo.html">DocumentAttributeVideo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentEmpty.html">DocumentEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DraftMessage.html">DraftMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DraftMessageEmpty.html">DraftMessageEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EmojiKeyword.html">EmojiKeyword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EmojiKeywordDeleted.html">EmojiKeywordDeleted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EmojiKeywordsDifference.html">EmojiKeywordsDifference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EmojiURL.html">EmojiURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedChat.html">EncryptedChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedChatDiscarded.html">EncryptedChatDiscarded</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedChatEmpty.html">EncryptedChatEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedChatRequested.html">EncryptedChatRequested</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedChatWaiting.html">EncryptedChatWaiting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedFile.html">EncryptedFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedFileEmpty.html">EncryptedFileEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedMessage.html">EncryptedMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EncryptedMessageService.html">EncryptedMessageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExportedMessageLink.html">ExportedMessageLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileHash.html">FileHash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileLocation.html">FileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileLocationUnavailable.html">FileLocationUnavailable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FoundGif.html">FoundGif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FoundGifCached.html">FoundGifCached</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Game.html">Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GeoPoint.html">GeoPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GeoPointEmpty.html">GeoPointEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HighScore.html">HighScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HttpWait.html">HttpWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportedContact.html">ImportedContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InlineBotSwitchPM.html">InlineBotSwitchPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputAppEvent.html">InputAppEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageGame.html">InputBotInlineMessageGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageID.html">InputBotInlineMessageID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageMediaAuto.html">InputBotInlineMessageMediaAuto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageMediaContact.html">InputBotInlineMessageMediaContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageMediaGeo.html">InputBotInlineMessageMediaGeo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageMediaVenue.html">InputBotInlineMessageMediaVenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineMessageText.html">InputBotInlineMessageText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineResult.html">InputBotInlineResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineResultDocument.html">InputBotInlineResultDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineResultGame.html">InputBotInlineResultGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputBotInlineResultPhoto.html">InputBotInlineResultPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputChannel.html">InputChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputChannelEmpty.html">InputChannelEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputChatPhoto.html">InputChatPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputChatPhotoEmpty.html">InputChatPhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputChatUploadedPhoto.html">InputChatUploadedPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputCheckPasswordEmpty.html">InputCheckPasswordEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputCheckPasswordSRP.html">InputCheckPasswordSRP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputClientProxy.html">InputClientProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputDialogPeer.html">InputDialogPeer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputDocument.html">InputDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputDocumentEmpty.html">InputDocumentEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputDocumentFileLocation.html">InputDocumentFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedChat.html">InputEncryptedChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedFile.html">InputEncryptedFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedFileBigUploaded.html">InputEncryptedFileBigUploaded</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedFileEmpty.html">InputEncryptedFileEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedFileLocation.html">InputEncryptedFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputEncryptedFileUploaded.html">InputEncryptedFileUploaded</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputFile.html">InputFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputFileBig.html">InputFileBig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputFileLocation.html">InputFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputGameID.html">InputGameID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputGameShortName.html">InputGameShortName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputGeoPoint.html">InputGeoPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputGeoPointEmpty.html">InputGeoPointEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaContact.html">InputMediaContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaDocument.html">InputMediaDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaDocumentExternal.html">InputMediaDocumentExternal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaEmpty.html">InputMediaEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaGame.html">InputMediaGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaGeoLive.html">InputMediaGeoLive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaGeoPoint.html">InputMediaGeoPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaGifExternal.html">InputMediaGifExternal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaInvoice.html">InputMediaInvoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaPhoto.html">InputMediaPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaPhotoExternal.html">InputMediaPhotoExternal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaPoll.html">InputMediaPoll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaUploadedDocument.html">InputMediaUploadedDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaUploadedPhoto.html">InputMediaUploadedPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMediaVenue.html">InputMediaVenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessageEntityMentionName.html">InputMessageEntityMentionName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessageID.html">InputMessageID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagePinned.html">InputMessagePinned</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessageReplyTo.html">InputMessageReplyTo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterChatPhotos.html">InputMessagesFilterChatPhotos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterContacts.html">InputMessagesFilterContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterDocument.html">InputMessagesFilterDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterEmpty.html">InputMessagesFilterEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterGeo.html">InputMessagesFilterGeo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterGif.html">InputMessagesFilterGif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterMusic.html">InputMessagesFilterMusic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterMyMentions.html">InputMessagesFilterMyMentions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterPhoneCalls.html">InputMessagesFilterPhoneCalls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterPhotoVideo.html">InputMessagesFilterPhotoVideo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterPhotos.html">InputMessagesFilterPhotos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterRoundVideo.html">InputMessagesFilterRoundVideo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterRoundVoice.html">InputMessagesFilterRoundVoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterUrl.html">InputMessagesFilterUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterVideo.html">InputMessagesFilterVideo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputMessagesFilterVoice.html">InputMessagesFilterVoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputNotifyBroadcasts.html">InputNotifyBroadcasts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputNotifyChats.html">InputNotifyChats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputNotifyPeer.html">InputNotifyPeer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputNotifyUsers.html">InputNotifyUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPaymentCredentials.html">InputPaymentCredentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPaymentCredentialsAndroidPay.html">InputPaymentCredentialsAndroidPay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPaymentCredentialsApplePay.html">InputPaymentCredentialsApplePay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPaymentCredentialsSaved.html">InputPaymentCredentialsSaved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerChannel.html">InputPeerChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerChat.html">InputPeerChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerEmpty.html">InputPeerEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerNotifySettings.html">InputPeerNotifySettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerSelf.html">InputPeerSelf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPeerUser.html">InputPeerUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPhoneCall.html">InputPhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPhoneContact.html">InputPhoneContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPhoto.html">InputPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPhotoEmpty.html">InputPhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyChatInvite.html">InputPrivacyKeyChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyForwards.html">InputPrivacyKeyForwards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyPhoneCall.html">InputPrivacyKeyPhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyPhoneP2P.html">InputPrivacyKeyPhoneP2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyProfilePhoto.html">InputPrivacyKeyProfilePhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyKeyStatusTimestamp.html">InputPrivacyKeyStatusTimestamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueAllowAll.html">InputPrivacyValueAllowAll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueAllowContacts.html">InputPrivacyValueAllowContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueAllowUsers.html">InputPrivacyValueAllowUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueDisallowAll.html">InputPrivacyValueDisallowAll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueDisallowContacts.html">InputPrivacyValueDisallowContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputPrivacyValueDisallowUsers.html">InputPrivacyValueDisallowUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonChildAbuse.html">InputReportReasonChildAbuse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonCopyright.html">InputReportReasonCopyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonOther.html">InputReportReasonOther</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonPornography.html">InputReportReasonPornography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonSpam.html">InputReportReasonSpam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputReportReasonViolence.html">InputReportReasonViolence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputSecureFile.html">InputSecureFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputSecureFileLocation.html">InputSecureFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputSecureFileUploaded.html">InputSecureFileUploaded</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputSecureValue.html">InputSecureValue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputSingleMedia.html">InputSingleMedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickerSetEmpty.html">InputStickerSetEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickerSetID.html">InputStickerSetID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickerSetItem.html">InputStickerSetItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickerSetShortName.html">InputStickerSetShortName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickeredMediaDocument.html">InputStickeredMediaDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputStickeredMediaPhoto.html">InputStickeredMediaPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputTakeoutFileLocation.html">InputTakeoutFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputUser.html">InputUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputUserEmpty.html">InputUserEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputUserSelf.html">InputUserSelf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputWallPaper.html">InputWallPaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputWallPaperSlug.html">InputWallPaperSlug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputWebDocument.html">InputWebDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputWebFileGeoPointLocation.html">InputWebFileGeoPointLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InputWebFileLocation.html">InputWebFileLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Invoice.html">Invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IpPort.html">IpPort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IpPortSecret.html">IpPortSecret</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonArray.html">JsonArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonBool.html">JsonBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonNull.html">JsonNull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonNumber.html">JsonNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonObject.html">JsonObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonObjectValue.html">JsonObjectValue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JsonString.html">JsonString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButton.html">KeyboardButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonBuy.html">KeyboardButtonBuy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonCallback.html">KeyboardButtonCallback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonGame.html">KeyboardButtonGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonRequestGeoLocation.html">KeyboardButtonRequestGeoLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonRequestPhone.html">KeyboardButtonRequestPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonRow.html">KeyboardButtonRow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonSwitchInline.html">KeyboardButtonSwitchInline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyboardButtonUrl.html">KeyboardButtonUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LabeledPrice.html">LabeledPrice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LangPackDifference.html">LangPackDifference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LangPackLanguage.html">LangPackLanguage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LangPackString.html">LangPackString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LangPackStringDeleted.html">LangPackStringDeleted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LangPackStringPluralized.html">LangPackStringPluralized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MaskCoords.html">MaskCoords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Message.html">Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionBotAllowed.html">MessageActionBotAllowed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChannelCreate.html">MessageActionChannelCreate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChannelMigrateFrom.html">MessageActionChannelMigrateFrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatAddUser.html">MessageActionChatAddUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatCreate.html">MessageActionChatCreate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatDeletePhoto.html">MessageActionChatDeletePhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatDeleteUser.html">MessageActionChatDeleteUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatEditPhoto.html">MessageActionChatEditPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatEditTitle.html">MessageActionChatEditTitle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatJoinedByLink.html">MessageActionChatJoinedByLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionChatMigrateTo.html">MessageActionChatMigrateTo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionContactSignUp.html">MessageActionContactSignUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionCustomAction.html">MessageActionCustomAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionEmpty.html">MessageActionEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionGameScore.html">MessageActionGameScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionHistoryClear.html">MessageActionHistoryClear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionPaymentSent.html">MessageActionPaymentSent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionPaymentSentMe.html">MessageActionPaymentSentMe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionPhoneCall.html">MessageActionPhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionPinMessage.html">MessageActionPinMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionScreenshotTaken.html">MessageActionScreenshotTaken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionSecureValuesSent.html">MessageActionSecureValuesSent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageActionSecureValuesSentMe.html">MessageActionSecureValuesSentMe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEmpty.html">MessageEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityBold.html">MessageEntityBold</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityBotCommand.html">MessageEntityBotCommand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityCashtag.html">MessageEntityCashtag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityCode.html">MessageEntityCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityEmail.html">MessageEntityEmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityHashtag.html">MessageEntityHashtag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityItalic.html">MessageEntityItalic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityMention.html">MessageEntityMention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityMentionName.html">MessageEntityMentionName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityPhone.html">MessageEntityPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityPre.html">MessageEntityPre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityTextUrl.html">MessageEntityTextUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityUnknown.html">MessageEntityUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEntityUrl.html">MessageEntityUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageFwdHeader.html">MessageFwdHeader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaContact.html">MessageMediaContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaDocument.html">MessageMediaDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaEmpty.html">MessageMediaEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaGame.html">MessageMediaGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaGeo.html">MessageMediaGeo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaGeoLive.html">MessageMediaGeoLive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaInvoice.html">MessageMediaInvoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaPhoto.html">MessageMediaPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaPoll.html">MessageMediaPoll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaUnsupported.html">MessageMediaUnsupported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaVenue.html">MessageMediaVenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageMediaWebPage.html">MessageMediaWebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageRange.html">MessageRange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageService.html">MessageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgDetailedInfo.html">MsgDetailedInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgNewDetailedInfo.html">MsgNewDetailedInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgResendAnsReq.html">MsgResendAnsReq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgResendReq.html">MsgResendReq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgsAck.html">MsgsAck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgsAllInfo.html">MsgsAllInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgsStateInfo.html">MsgsStateInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MsgsStateReq.html">MsgsStateReq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NearestDc.html">NearestDc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NewSessionCreated.html">NewSessionCreated</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NotifyBroadcasts.html">NotifyBroadcasts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NotifyChats.html">NotifyChats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NotifyPeer.html">NotifyPeer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NotifyUsers.html">NotifyUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PQInnerData.html">PQInnerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PQInnerDataDc.html">PQInnerDataDc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PQInnerDataTemp.html">PQInnerDataTemp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PQInnerDataTempDc.html">PQInnerDataTempDc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Page.html">Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockAnchor.html">PageBlockAnchor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockAudio.html">PageBlockAudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockAuthorDate.html">PageBlockAuthorDate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockBlockquote.html">PageBlockBlockquote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockChannel.html">PageBlockChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockCollage.html">PageBlockCollage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockCover.html">PageBlockCover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockDetails.html">PageBlockDetails</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockDivider.html">PageBlockDivider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockEmbed.html">PageBlockEmbed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockEmbedPost.html">PageBlockEmbedPost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockFooter.html">PageBlockFooter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockHeader.html">PageBlockHeader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockKicker.html">PageBlockKicker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockList.html">PageBlockList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockMap.html">PageBlockMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockOrderedList.html">PageBlockOrderedList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockParagraph.html">PageBlockParagraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockPhoto.html">PageBlockPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockPreformatted.html">PageBlockPreformatted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockPullquote.html">PageBlockPullquote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockRelatedArticles.html">PageBlockRelatedArticles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockSlideshow.html">PageBlockSlideshow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockSubheader.html">PageBlockSubheader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockSubtitle.html">PageBlockSubtitle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockTable.html">PageBlockTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockTitle.html">PageBlockTitle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockUnsupported.html">PageBlockUnsupported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageBlockVideo.html">PageBlockVideo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageCaption.html">PageCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageListItemBlocks.html">PageListItemBlocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageListItemText.html">PageListItemText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageListOrderedItemBlocks.html">PageListOrderedItemBlocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageListOrderedItemText.html">PageListOrderedItemText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageRelatedArticle.html">PageRelatedArticle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageTableCell.html">PageTableCell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageTableRow.html">PageTableRow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PasswordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.html">PasswordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PasswordKdfAlgoUnknown.html">PasswordKdfAlgoUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PaymentCharge.html">PaymentCharge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PaymentRequestedInfo.html">PaymentRequestedInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PaymentSavedCredentialsCard.html">PaymentSavedCredentialsCard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PeerChannel.html">PeerChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PeerChat.html">PeerChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PeerNotifySettings.html">PeerNotifySettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PeerSettings.html">PeerSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PeerUser.html">PeerUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCall.html">PhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallAccepted.html">PhoneCallAccepted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallDiscardReasonBusy.html">PhoneCallDiscardReasonBusy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallDiscardReasonDisconnect.html">PhoneCallDiscardReasonDisconnect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallDiscardReasonHangup.html">PhoneCallDiscardReasonHangup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallDiscardReasonMissed.html">PhoneCallDiscardReasonMissed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallDiscarded.html">PhoneCallDiscarded</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallEmpty.html">PhoneCallEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallProtocol.html">PhoneCallProtocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallRequested.html">PhoneCallRequested</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneCallWaiting.html">PhoneCallWaiting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhoneConnection.html">PhoneConnection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Photo.html">Photo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhotoCachedSize.html">PhotoCachedSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhotoEmpty.html">PhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhotoSize.html">PhotoSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhotoSizeEmpty.html">PhotoSizeEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhotoStrippedSize.html">PhotoStrippedSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poll.html">Poll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PollAnswer.html">PollAnswer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PollAnswerVoters.html">PollAnswerVoters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PollResults.html">PollResults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pong.html">Pong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PopularContact.html">PopularContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PostAddress.html">PostAddress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyChatInvite.html">PrivacyKeyChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyForwards.html">PrivacyKeyForwards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyPhoneCall.html">PrivacyKeyPhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyPhoneP2P.html">PrivacyKeyPhoneP2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyProfilePhoto.html">PrivacyKeyProfilePhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyKeyStatusTimestamp.html">PrivacyKeyStatusTimestamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueAllowAll.html">PrivacyValueAllowAll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueAllowContacts.html">PrivacyValueAllowContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueAllowUsers.html">PrivacyValueAllowUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueDisallowAll.html">PrivacyValueDisallowAll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueDisallowContacts.html">PrivacyValueDisallowContacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrivacyValueDisallowUsers.html">PrivacyValueDisallowUsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReceivedNotifyMessage.html">ReceivedNotifyMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RecentMeUrlChat.html">RecentMeUrlChat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RecentMeUrlChatInvite.html">RecentMeUrlChatInvite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RecentMeUrlStickerSet.html">RecentMeUrlStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RecentMeUrlUnknown.html">RecentMeUrlUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RecentMeUrlUser.html">RecentMeUrlUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReplyInlineMarkup.html">ReplyInlineMarkup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReplyKeyboardForceReply.html">ReplyKeyboardForceReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReplyKeyboardHide.html">ReplyKeyboardHide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReplyKeyboardMarkup.html">ReplyKeyboardMarkup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResPQ.html">ResPQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RpcAnswerDropped.html">RpcAnswerDropped</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RpcAnswerDroppedRunning.html">RpcAnswerDroppedRunning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RpcAnswerUnknown.html">RpcAnswerUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RpcError.html">RpcError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RpcResult.html">RpcResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SavedPhoneContact.html">SavedPhoneContact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureCredentialsEncrypted.html">SecureCredentialsEncrypted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureData.html">SecureData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureFile.html">SecureFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureFileEmpty.html">SecureFileEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecurePasswordKdfAlgoPBKDF2HMACSHA512iter100000.html">SecurePasswordKdfAlgoPBKDF2HMACSHA512iter100000</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecurePasswordKdfAlgoSHA512.html">SecurePasswordKdfAlgoSHA512</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecurePasswordKdfAlgoUnknown.html">SecurePasswordKdfAlgoUnknown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecurePlainEmail.html">SecurePlainEmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecurePlainPhone.html">SecurePlainPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureRequiredType.html">SecureRequiredType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureRequiredTypeOneOf.html">SecureRequiredTypeOneOf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureSecretSettings.html">SecureSecretSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValue.html">SecureValue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueError.html">SecureValueError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorData.html">SecureValueErrorData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorFile.html">SecureValueErrorFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorFiles.html">SecureValueErrorFiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorFrontSide.html">SecureValueErrorFrontSide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorReverseSide.html">SecureValueErrorReverseSide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorSelfie.html">SecureValueErrorSelfie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorTranslationFile.html">SecureValueErrorTranslationFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueErrorTranslationFiles.html">SecureValueErrorTranslationFiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueHash.html">SecureValueHash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeAddress.html">SecureValueTypeAddress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeBankStatement.html">SecureValueTypeBankStatement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeDriverLicense.html">SecureValueTypeDriverLicense</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeEmail.html">SecureValueTypeEmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeIdentityCard.html">SecureValueTypeIdentityCard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeInternalPassport.html">SecureValueTypeInternalPassport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypePassport.html">SecureValueTypePassport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypePassportRegistration.html">SecureValueTypePassportRegistration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypePersonalDetails.html">SecureValueTypePersonalDetails</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypePhone.html">SecureValueTypePhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeRentalAgreement.html">SecureValueTypeRentalAgreement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeTemporaryRegistration.html">SecureValueTypeTemporaryRegistration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SecureValueTypeUtilityBill.html">SecureValueTypeUtilityBill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageCancelAction.html">SendMessageCancelAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageChooseContactAction.html">SendMessageChooseContactAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageGamePlayAction.html">SendMessageGamePlayAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageGeoLocationAction.html">SendMessageGeoLocationAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageRecordAudioAction.html">SendMessageRecordAudioAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageRecordRoundAction.html">SendMessageRecordRoundAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageRecordVideoAction.html">SendMessageRecordVideoAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageTypingAction.html">SendMessageTypingAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageUploadAudioAction.html">SendMessageUploadAudioAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageUploadDocumentAction.html">SendMessageUploadDocumentAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageUploadPhotoAction.html">SendMessageUploadPhotoAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageUploadRoundAction.html">SendMessageUploadRoundAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SendMessageUploadVideoAction.html">SendMessageUploadVideoAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ServerDHInnerData.html">ServerDHInnerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ServerDHParamsFail.html">ServerDHParamsFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ServerDHParamsOk.html">ServerDHParamsOk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ShippingOption.html">ShippingOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StatsURL.html">StatsURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StickerPack.html">StickerPack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StickerSet.html">StickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StickerSetCovered.html">StickerSetCovered</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StickerSetMultiCovered.html">StickerSetMultiCovered</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextAnchor.html">TextAnchor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextBold.html">TextBold</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextConcat.html">TextConcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextEmail.html">TextEmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextEmpty.html">TextEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextFixed.html">TextFixed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextImage.html">TextImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextItalic.html">TextItalic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextMarked.html">TextMarked</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextPhone.html">TextPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextPlain.html">TextPlain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextStrike.html">TextStrike</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextSubscript.html">TextSubscript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextSuperscript.html">TextSuperscript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextUnderline.html">TextUnderline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextUrl.html">TextUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeer.html">TopPeer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryBotsInline.html">TopPeerCategoryBotsInline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryBotsPM.html">TopPeerCategoryBotsPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryChannels.html">TopPeerCategoryChannels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryCorrespondents.html">TopPeerCategoryCorrespondents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryGroups.html">TopPeerCategoryGroups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryPeers.html">TopPeerCategoryPeers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopPeerCategoryPhoneCalls.html">TopPeerCategoryPhoneCalls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Update.html">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotCallbackQuery.html">UpdateBotCallbackQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotInlineQuery.html">UpdateBotInlineQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotInlineSend.html">UpdateBotInlineSend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotPrecheckoutQuery.html">UpdateBotPrecheckoutQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotShippingQuery.html">UpdateBotShippingQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotWebhookJSON.html">UpdateBotWebhookJSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateBotWebhookJSONQuery.html">UpdateBotWebhookJSONQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannel.html">UpdateChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelAvailableMessages.html">UpdateChannelAvailableMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelMessageViews.html">UpdateChannelMessageViews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelPinnedMessage.html">UpdateChannelPinnedMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelReadMessagesContents.html">UpdateChannelReadMessagesContents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelTooLong.html">UpdateChannelTooLong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChannelWebPage.html">UpdateChannelWebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatDefaultBannedRights.html">UpdateChatDefaultBannedRights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatParticipantAdd.html">UpdateChatParticipantAdd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatParticipantAdmin.html">UpdateChatParticipantAdmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatParticipantDelete.html">UpdateChatParticipantDelete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatParticipants.html">UpdateChatParticipants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatPinnedMessage.html">UpdateChatPinnedMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateChatUserTyping.html">UpdateChatUserTyping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateConfig.html">UpdateConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateContactLink.html">UpdateContactLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateContactsReset.html">UpdateContactsReset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDcOptions.html">UpdateDcOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDeleteChannelMessages.html">UpdateDeleteChannelMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDeleteMessages.html">UpdateDeleteMessages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDialogPinned.html">UpdateDialogPinned</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDialogUnreadMark.html">UpdateDialogUnreadMark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateDraftMessage.html">UpdateDraftMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateEditChannelMessage.html">UpdateEditChannelMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateEditMessage.html">UpdateEditMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateEncryptedChatTyping.html">UpdateEncryptedChatTyping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateEncryptedMessagesRead.html">UpdateEncryptedMessagesRead</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateEncryption.html">UpdateEncryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateFavedStickers.html">UpdateFavedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateInlineBotCallbackQuery.html">UpdateInlineBotCallbackQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateLangPack.html">UpdateLangPack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateLangPackTooLong.html">UpdateLangPackTooLong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateMessageID.html">UpdateMessageID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateMessagePoll.html">UpdateMessagePoll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateNewChannelMessage.html">UpdateNewChannelMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateNewEncryptedMessage.html">UpdateNewEncryptedMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateNewMessage.html">UpdateNewMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateNewStickerSet.html">UpdateNewStickerSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateNotifySettings.html">UpdateNotifySettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatePhoneCall.html">UpdatePhoneCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatePinnedDialogs.html">UpdatePinnedDialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatePrivacy.html">UpdatePrivacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatePtsChanged.html">UpdatePtsChanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadChannelInbox.html">UpdateReadChannelInbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadChannelOutbox.html">UpdateReadChannelOutbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadFeaturedStickers.html">UpdateReadFeaturedStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadHistoryInbox.html">UpdateReadHistoryInbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadHistoryOutbox.html">UpdateReadHistoryOutbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateReadMessagesContents.html">UpdateReadMessagesContents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateRecentStickers.html">UpdateRecentStickers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateSavedGifs.html">UpdateSavedGifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateServiceNotification.html">UpdateServiceNotification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateShort.html">UpdateShort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateShortChatMessage.html">UpdateShortChatMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateShortMessage.html">UpdateShortMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateShortSentMessage.html">UpdateShortSentMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateStickerSets.html">UpdateStickerSets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateStickerSetsOrder.html">UpdateStickerSetsOrder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserBlocked.html">UpdateUserBlocked</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserName.html">UpdateUserName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserPhone.html">UpdateUserPhone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserPhoto.html">UpdateUserPhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserPinnedMessage.html">UpdateUserPinnedMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserStatus.html">UpdateUserStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateUserTyping.html">UpdateUserTyping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdateWebPage.html">UpdateWebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatesCombined.html">UpdatesCombined</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UpdatesTooLong.html">UpdatesTooLong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="User.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserEmpty.html">UserEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserFull.html">UserFull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserProfilePhoto.html">UserProfilePhoto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserProfilePhotoEmpty.html">UserProfilePhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusEmpty.html">UserStatusEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusLastMonth.html">UserStatusLastMonth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusLastWeek.html">UserStatusLastWeek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusOffline.html">UserStatusOffline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusOnline.html">UserStatusOnline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserStatusRecently.html">UserStatusRecently</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WallPaper.html">WallPaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WallPaperSettings.html">WallPaperSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebAuthorization.html">WebAuthorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebDocument.html">WebDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebDocumentNoProxy.html">WebDocumentNoProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebPage.html">WebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebPageEmpty.html">WebPageEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebPageNotModified.html">WebPageNotModified</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebPagePending.html">WebPagePending</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="account/index.html" class="btn btn-neutral float-right" title="Account" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../functions/SetClientDHParams.html" class="btn btn-neutral" title="SetClientDHParams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2019, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.12.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

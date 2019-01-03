@@ -1,0 +1,61 @@
+Account
+=======
+
+.. module:: pyrogram.api.functions.account
+
+.. toctree::
+    AcceptAuthorization
+    CancelPasswordEmail
+    ChangePhone
+    CheckUsername
+    ConfirmPasswordEmail
+    ConfirmPhone
+    DeleteAccount
+    DeleteSecureValue
+    FinishTakeoutSession
+    GetAccountTTL
+    GetAllSecureValues
+    GetAuthorizationForm
+    GetAuthorizations
+    GetAutoDownloadSettings
+    GetContactSignUpNotification
+    GetNotifyExceptions
+    GetNotifySettings
+    GetPassword
+    GetPasswordSettings
+    GetPrivacy
+    GetSecureValue
+    GetTmpPassword
+    GetWallPaper
+    GetWallPapers
+    GetWebAuthorizations
+    InitTakeoutSession
+    InstallWallPaper
+    RegisterDevice
+    ReportPeer
+    ResendPasswordEmail
+    ResetAuthorization
+    ResetNotifySettings
+    ResetWallPapers
+    ResetWebAuthorization
+    ResetWebAuthorizations
+    SaveAutoDownloadSettings
+    SaveSecureValue
+    SaveWallPaper
+    SendChangePhoneCode
+    SendConfirmPhoneCode
+    SendVerifyEmailCode
+    SendVerifyPhoneCode
+    SetAccountTTL
+    SetContactSignUpNotification
+    SetPrivacy
+    UnregisterDevice
+    UpdateDeviceLocked
+    UpdateNotifySettings
+    UpdatePasswordSettings
+    UpdateProfile
+    UpdateStatus
+    UpdateUsername
+    UploadWallPaper
+    VerifyEmail
+    VerifyPhone

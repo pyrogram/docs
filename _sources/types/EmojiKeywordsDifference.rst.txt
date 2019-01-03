@@ -1,0 +1,5 @@
+EmojiKeywordsDifference
+=======================
+
+.. autoclass:: pyrogram.api.types.EmojiKeywordsDifference
+    :members:

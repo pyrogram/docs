@@ -1,0 +1,5 @@
+GetEmojiKeywords
+================
+
+.. autoclass:: pyrogram.api.functions.messages.GetEmojiKeywords
+    :members:

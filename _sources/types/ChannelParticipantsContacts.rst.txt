@@ -1,0 +1,5 @@
+ChannelParticipantsContacts
+===========================
+
+.. autoclass:: pyrogram.api.types.ChannelParticipantsContacts
+    :members:

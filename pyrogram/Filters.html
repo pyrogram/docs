@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filters &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/pyrogram/Filters.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ChatAction" href="ChatAction.html" />
+    <link rel="prev" title="Handlers" href="Handlers.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/4E0uKSE.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.12.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#asynchronous">Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-add-handler">Using add_handler()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UpdateHandling.html#using-decorators">Using Decorators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/UsingFilters.html">Using Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/UsingFilters.html#custom-filters">Custom Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#basic-filters">Basic Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/UsingFilters.html#filters-with-arguments">Filters with Arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/MoreOnUpdates.html">More on Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#handler-groups">Handler Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/MoreOnUpdates.html#update-propagation">Update propagation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#stop-propagation">Stop Propagation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/MoreOnUpdates.html#continue-propagation">Continue Propagation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ConfigurationFile.html">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#the-config-ini-file">The config.ini File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ConfigurationFile.html#configuration-sections">Configuration Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#pyrogram">Pyrogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/ConfigurationFile.html#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SmartPlugins.html">Smart Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#using-smart-plugins">Using Smart Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#specifying-the-plugins-to-include">Specifying the Plugins to include</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SmartPlugins.html#load-unload-plugins-at-runtime">Load/Unload Plugins at Runtime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#unloading">Unloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/SmartPlugins.html#loading">Loading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TgCrypto.html">Fast Crypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/TestServers.html">Test Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-mode-in-official-apps">Test Mode in Official Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/TestServers.html#test-numbers">Test Numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/AdvancedUsage.html">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resources/AdvancedUsage.html#telegram-raw-api">Telegram Raw API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#invoking-functions">Invoking Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources/AdvancedUsage.html#chat-ids">Chat IDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/VoiceCalls.html">Voice Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/Changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pyrogram</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Client.html">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#utilities">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#decorators">Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#chats">Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#password">Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html#bots">Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Types.html">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#users-chats">Users &amp; Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#messages-media">Messages &amp; Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#bots">Bots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#input-media">Input Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Types.html#inputmessagecontent">InputMessageContent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Handlers.html">Handlers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RPCError.html">RPCError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../errors/SeeOther.html">303 - See Other</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/BadRequest.html">400 - Bad Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Unauthorized.html">401 - Unauthorized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Forbidden.html">403 - Forbidden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/NotAcceptable.html">406 - Not Acceptable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Flood.html">420 - Flood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/InternalServerError.html">500 - Internal Server Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/UnknownError.html">520 - Unknown Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Pyrogram</a> &raquo;</li>
+        
+      <li>Filters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filters">
+<h1>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyrogram.Filters">
+<em class="property">class </em><code class="descclassname">pyrogram.</code><code class="descname">Filters</code><a class="headerlink" href="#pyrogram.Filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides access to all library-defined Filters available in Pyrogram.</p>
+<p>The Filters listed here are intended to be used with the <a class="reference internal" href="Handlers.html#pyrogram.MessageHandler" title="pyrogram.MessageHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageHandler</span></code></a> only.
+At the moment, if you want to filter updates coming from different <a class="reference external" href="Handlers.html">Handlers</a> you have to create
+your own filters with <a class="reference internal" href="#pyrogram.Filters.create" title="pyrogram.Filters.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Filters.create()</span></code></a> and use them in the same way.</p>
+<dl class="method">
+<dt id="pyrogram.Filters.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>func: callable</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; type<a class="headerlink" href="#pyrogram.Filters.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to create a Filter.</p>
+<p>Custom filters give you extra control over which updates are allowed or not to be processed by your handlers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – Your filter’s name. Can be anything you like.</li>
+<li><strong>func</strong> (<code class="docutils literal notranslate"><span class="pre">callable</span></code>) – A function that accepts two arguments <em>(filter, update)</em> and returns a Boolean: True if the update should be
+handled, False otherwise.
+The “update” argument type will vary depending on which <a class="reference external" href="Handlers.html">Handler</a> is coming from.
+For example, in a <a class="reference internal" href="Handlers.html#pyrogram.MessageHandler" title="pyrogram.MessageHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageHandler</span></code></a> the update type will be
+a <a class="reference internal" href="Types.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>; in a <a class="reference internal" href="Handlers.html#pyrogram.CallbackQueryHandler" title="pyrogram.CallbackQueryHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQueryHandler</span></code></a> the
+update type will be a <a class="reference internal" href="Types.html#pyrogram.CallbackQuery" title="pyrogram.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a>. Your function body can then access the
+incoming update and decide whether to allow it or not.</li>
+<li><strong>**kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">any</span></code>, <em>optional</em>) – Any keyword argument you would like to pass. Useful for custom filters that accept parameters (e.g.:
+<a class="reference internal" href="#pyrogram.Filters.command" title="pyrogram.Filters.command"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Filters.command()</span></code></a>, <a class="reference internal" href="#pyrogram.Filters.regex" title="pyrogram.Filters.regex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Filters.regex()</span></code></a>).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.me">
+<code class="descname">me</code><em class="property"> = &lt;pyrogram.client.filters.filters.Me object&gt;</em><a class="headerlink" href="#pyrogram.Filters.me" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages generated by you yourself.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.bot">
+<code class="descname">bot</code><em class="property"> = &lt;pyrogram.client.filters.filters.Bot object&gt;</em><a class="headerlink" href="#pyrogram.Filters.bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages coming from bots.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.incoming">
+<code class="descname">incoming</code><em class="property"> = &lt;pyrogram.client.filters.filters.Incoming object&gt;</em><a class="headerlink" href="#pyrogram.Filters.incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter incoming messages. Messages sent to your own chat (Saved Messages) are also recognised as incoming.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.outgoing">
+<code class="descname">outgoing</code><em class="property"> = &lt;pyrogram.client.filters.filters.Outgoing object&gt;</em><a class="headerlink" href="#pyrogram.Filters.outgoing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter outgoing messages. Messages sent to your own chat (Saved Messages) are not recognized as outgoing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.text">
+<code class="descname">text</code><em class="property"> = &lt;pyrogram.client.filters.filters.Text object&gt;</em><a class="headerlink" href="#pyrogram.Filters.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter text messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.reply">
+<code class="descname">reply</code><em class="property"> = &lt;pyrogram.client.filters.filters.Reply object&gt;</em><a class="headerlink" href="#pyrogram.Filters.reply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that are replies to other messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.forwarded">
+<code class="descname">forwarded</code><em class="property"> = &lt;pyrogram.client.filters.filters.Forwarded object&gt;</em><a class="headerlink" href="#pyrogram.Filters.forwarded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that are forwarded.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.caption">
+<code class="descname">caption</code><em class="property"> = &lt;pyrogram.client.filters.filters.Caption object&gt;</em><a class="headerlink" href="#pyrogram.Filters.caption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter media messages that contain captions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.edited">
+<code class="descname">edited</code><em class="property"> = &lt;pyrogram.client.filters.filters.Edited object&gt;</em><a class="headerlink" href="#pyrogram.Filters.edited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter edited messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.audio">
+<code class="descname">audio</code><em class="property"> = &lt;pyrogram.client.filters.filters.Audio object&gt;</em><a class="headerlink" href="#pyrogram.Filters.audio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Audio" title="pyrogram.Audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Audio</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.document">
+<code class="descname">document</code><em class="property"> = &lt;pyrogram.client.filters.filters.Document object&gt;</em><a class="headerlink" href="#pyrogram.Filters.document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Document" title="pyrogram.Document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Document</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.photo">
+<code class="descname">photo</code><em class="property"> = &lt;pyrogram.client.filters.filters.Photo object&gt;</em><a class="headerlink" href="#pyrogram.Filters.photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.PhotoSize" title="pyrogram.PhotoSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photo</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.sticker">
+<code class="descname">sticker</code><em class="property"> = &lt;pyrogram.client.filters.filters.Sticker object&gt;</em><a class="headerlink" href="#pyrogram.Filters.sticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Sticker" title="pyrogram.Sticker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sticker</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.animation">
+<code class="descname">animation</code><em class="property"> = &lt;pyrogram.client.filters.filters.Animation object&gt;</em><a class="headerlink" href="#pyrogram.Filters.animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Animation" title="pyrogram.Animation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Animation</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.game">
+<code class="descname">game</code><em class="property"> = &lt;pyrogram.client.filters.filters.Game object&gt;</em><a class="headerlink" href="#pyrogram.Filters.game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Game" title="pyrogram.Game"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Game</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.video">
+<code class="descname">video</code><em class="property"> = &lt;pyrogram.client.filters.filters.Video object&gt;</em><a class="headerlink" href="#pyrogram.Filters.video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Video" title="pyrogram.Video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Video</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.media_group">
+<code class="descname">media_group</code><em class="property"> = &lt;pyrogram.client.filters.filters.MediaGroup object&gt;</em><a class="headerlink" href="#pyrogram.Filters.media_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages containing photos or videos being part of an album.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.voice">
+<code class="descname">voice</code><em class="property"> = &lt;pyrogram.client.filters.filters.Voice object&gt;</em><a class="headerlink" href="#pyrogram.Filters.voice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Voice" title="pyrogram.Voice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Voice</span></code></a> note objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.video_note">
+<code class="descname">video_note</code><em class="property"> = &lt;pyrogram.client.filters.filters.VideoNote object&gt;</em><a class="headerlink" href="#pyrogram.Filters.video_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.VideoNote" title="pyrogram.VideoNote"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VideoNote</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.contact">
+<code class="descname">contact</code><em class="property"> = &lt;pyrogram.client.filters.filters.Contact object&gt;</em><a class="headerlink" href="#pyrogram.Filters.contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Contact" title="pyrogram.Contact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contact</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.location">
+<code class="descname">location</code><em class="property"> = &lt;pyrogram.client.filters.filters.Location object&gt;</em><a class="headerlink" href="#pyrogram.Filters.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Location" title="pyrogram.Location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Location</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.venue">
+<code class="descname">venue</code><em class="property"> = &lt;pyrogram.client.filters.filters.Venue object&gt;</em><a class="headerlink" href="#pyrogram.Filters.venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Venue" title="pyrogram.Venue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Venue</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.web_page">
+<code class="descname">web_page</code><em class="property"> = &lt;pyrogram.client.filters.filters.WebPage object&gt;</em><a class="headerlink" href="#pyrogram.Filters.web_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages sent with a webpage preview.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.poll">
+<code class="descname">poll</code><em class="property"> = &lt;pyrogram.client.filters.filters.Poll object&gt;</em><a class="headerlink" href="#pyrogram.Filters.poll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that contain <a class="reference internal" href="Types.html#pyrogram.Poll" title="pyrogram.Poll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Poll</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.private">
+<code class="descname">private</code><em class="property"> = &lt;pyrogram.client.filters.filters.Private object&gt;</em><a class="headerlink" href="#pyrogram.Filters.private" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages sent in private chats.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.group">
+<code class="descname">group</code><em class="property"> = &lt;pyrogram.client.filters.filters.Group object&gt;</em><a class="headerlink" href="#pyrogram.Filters.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages sent in group or supergroup chats.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.channel">
+<code class="descname">channel</code><em class="property"> = &lt;pyrogram.client.filters.filters.Channel object&gt;</em><a class="headerlink" href="#pyrogram.Filters.channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages sent in channels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.new_chat_members">
+<code class="descname">new_chat_members</code><em class="property"> = &lt;pyrogram.client.filters.filters.NewChatMembers object&gt;</em><a class="headerlink" href="#pyrogram.Filters.new_chat_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for new chat members.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.left_chat_member">
+<code class="descname">left_chat_member</code><em class="property"> = &lt;pyrogram.client.filters.filters.LeftChatMember object&gt;</em><a class="headerlink" href="#pyrogram.Filters.left_chat_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for members that left the chat.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.new_chat_title">
+<code class="descname">new_chat_title</code><em class="property"> = &lt;pyrogram.client.filters.filters.NewChatTitle object&gt;</em><a class="headerlink" href="#pyrogram.Filters.new_chat_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for new chat titles.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.new_chat_photo">
+<code class="descname">new_chat_photo</code><em class="property"> = &lt;pyrogram.client.filters.filters.NewChatPhoto object&gt;</em><a class="headerlink" href="#pyrogram.Filters.new_chat_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for new chat photos.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.delete_chat_photo">
+<code class="descname">delete_chat_photo</code><em class="property"> = &lt;pyrogram.client.filters.filters.DeleteChatPhoto object&gt;</em><a class="headerlink" href="#pyrogram.Filters.delete_chat_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for deleted photos.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.group_chat_created">
+<code class="descname">group_chat_created</code><em class="property"> = &lt;pyrogram.client.filters.filters.GroupChatCreated object&gt;</em><a class="headerlink" href="#pyrogram.Filters.group_chat_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for group chat creations.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.supergroup_chat_created">
+<code class="descname">supergroup_chat_created</code><em class="property"> = &lt;pyrogram.client.filters.filters.SupergroupChatCreated object&gt;</em><a class="headerlink" href="#pyrogram.Filters.supergroup_chat_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for supergroup chat creations.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.channel_chat_created">
+<code class="descname">channel_chat_created</code><em class="property"> = &lt;pyrogram.client.filters.filters.ChannelChatCreated object&gt;</em><a class="headerlink" href="#pyrogram.Filters.channel_chat_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for channel chat creations.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.migrate_to_chat_id">
+<code class="descname">migrate_to_chat_id</code><em class="property"> = &lt;pyrogram.client.filters.filters.MigrateToChatId object&gt;</em><a class="headerlink" href="#pyrogram.Filters.migrate_to_chat_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages that contain migrate_to_chat_id.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.migrate_from_chat_id">
+<code class="descname">migrate_from_chat_id</code><em class="property"> = &lt;pyrogram.client.filters.filters.MigrateFromChatId object&gt;</em><a class="headerlink" href="#pyrogram.Filters.migrate_from_chat_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages that contain migrate_from_chat_id.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.pinned_message">
+<code class="descname">pinned_message</code><em class="property"> = &lt;pyrogram.client.filters.filters.PinnedMessage object&gt;</em><a class="headerlink" href="#pyrogram.Filters.pinned_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for pinned messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.game_high_score">
+<code class="descname">game_high_score</code><em class="property"> = &lt;pyrogram.client.filters.filters.GameHighScore object&gt;</em><a class="headerlink" href="#pyrogram.Filters.game_high_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages for game high scores.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.reply_keyboard">
+<code class="descname">reply_keyboard</code><em class="property"> = &lt;pyrogram.client.filters.filters.ReplyKeyboard object&gt;</em><a class="headerlink" href="#pyrogram.Filters.reply_keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages containing reply keyboard markups</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.inline_keyboard">
+<code class="descname">inline_keyboard</code><em class="property"> = &lt;pyrogram.client.filters.filters.InlineKeyboard object&gt;</em><a class="headerlink" href="#pyrogram.Filters.inline_keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages containing inline keyboard markups</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.mentioned">
+<code class="descname">mentioned</code><em class="property"> = &lt;pyrogram.client.filters.filters.Mentioned object&gt;</em><a class="headerlink" href="#pyrogram.Filters.mentioned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages containing mentions</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.via_bot">
+<code class="descname">via_bot</code><em class="property"> = &lt;pyrogram.client.filters.filters.ViaBot object&gt;</em><a class="headerlink" href="#pyrogram.Filters.via_bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages sent via inline bots</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.service">
+<code class="descname">service</code><em class="property"> = &lt;pyrogram.client.filters.filters.Service object&gt;</em><a class="headerlink" href="#pyrogram.Filters.service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter service messages. A service message contains any of the following fields set</p>
+<ul class="simple">
+<li>left_chat_member</li>
+<li>new_chat_title</li>
+<li>new_chat_photo</li>
+<li>delete_chat_photo</li>
+<li>group_chat_created</li>
+<li>supergroup_chat_created</li>
+<li>channel_chat_created</li>
+<li>migrate_to_chat_id</li>
+<li>migrate_from_chat_id</li>
+<li>pinned_message</li>
+<li>game_score</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyrogram.Filters.media">
+<code class="descname">media</code><em class="property"> = &lt;pyrogram.client.filters.filters.Media object&gt;</em><a class="headerlink" href="#pyrogram.Filters.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter media messages. A media message contains any of the following fields set</p>
+<ul class="simple">
+<li>audio</li>
+<li>document</li>
+<li>photo</li>
+<li>sticker</li>
+<li>video</li>
+<li>animation</li>
+<li>voice</li>
+<li>video_note</li>
+<li>contact</li>
+<li>location</li>
+<li>venue</li>
+<li>poll</li>
+</ul>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyrogram.Filters.command">
+<em class="property">static </em><code class="descname">command</code><span class="sig-paren">(</span><em>commands: str</em>, <em>prefix: str = '/'</em>, <em>separator: str = ' '</em>, <em>case_sensitive: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Filters.command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter commands, i.e.: text messages starting with “/” or any other custom prefix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>commands</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">list</span></code>) – The command or list of commands as string the filter should look for.
+Examples: “start”, [“start”, “help”, “settings”]. When a message text containing
+a command arrives, the command itself and its arguments will be stored in the <em>command</em>
+field of the <a class="reference internal" href="Types.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>.</li>
+<li><strong>prefix</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">list</span></code>, <em>optional</em>) – A prefix or a list of prefixes as string the filter should look for.
+Defaults to “/” (slash). Examples: “.”, “!”, [“/”, “!”, “.”].
+Can be None or “” (empty string) to allow commands with no prefix at all.</li>
+<li><strong>separator</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – The command arguments separator. Defaults to ” ” (white space).
+Examples: /start first second, /start-first-second, /start.first.second.</li>
+<li><strong>case_sensitive</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True if you want your command(s) to be case sensitive. Defaults to False.
+Examples: when True, command=”Start” would trigger /Start but not /start.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyrogram.Filters.regex">
+<em class="property">static </em><code class="descname">regex</code><span class="sig-paren">(</span><em>pattern</em>, <em>flags: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Filters.regex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages that match a given RegEx pattern.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pattern</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – The RegEx pattern as string, it will be applied to the text of a message. When a pattern matches,
+all the <a class="reference external" href="https://docs.python.org/3/library/re.html#match-objects">Match Objects</a>
+are stored in the <em>matches</em> field of the <a class="reference internal" href="Types.html#pyrogram.Message" title="pyrogram.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a> itself.</li>
+<li><strong>flags</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – RegEx flags.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyrogram.Filters.user">
+<em class="property">class </em><code class="descname">user</code><span class="sig-paren">(</span><em>users: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Filters.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages coming from one or more users.</p>
+<p>You can use <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set">set bound methods</a> to manipulate the
+users container.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>users</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">list</span></code>) – Pass one or more user ids/usernames to filter users.
+For you yourself, “me” or “self” can be used as well.
+Defaults to None (no users).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyrogram.Filters.chat">
+<em class="property">class </em><code class="descname">chat</code><span class="sig-paren">(</span><em>chats: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Filters.chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter messages coming from one or more chats.</p>
+<p>You can use <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set">set bound methods</a> to manipulate the
+chats container.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chats</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">list</span></code>) – Pass one or more chat ids/usernames to filter chats.
+For your personal cloud (Saved Messages) you can simply use “me” or “self”.
+Defaults to None (no chats).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ChatAction.html" class="btn btn-neutral float-right" title="ChatAction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Handlers.html" class="btn btn-neutral" title="Handlers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2019, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.12.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

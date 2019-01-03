@@ -1,0 +1,5 @@
+GetAutoDownloadSettings
+=======================
+
+.. autoclass:: pyrogram.api.functions.account.GetAutoDownloadSettings
+    :members:

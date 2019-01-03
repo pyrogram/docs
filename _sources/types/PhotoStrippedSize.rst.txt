@@ -1,0 +1,5 @@
+PhotoStrippedSize
+=================
+
+.. autoclass:: pyrogram.api.types.PhotoStrippedSize
+    :members:

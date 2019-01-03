@@ -1,0 +1,5 @@
+GetWallPaper
+============
+
+.. autoclass:: pyrogram.api.functions.account.GetWallPaper
+    :members:

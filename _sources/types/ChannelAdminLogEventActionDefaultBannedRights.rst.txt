@@ -1,0 +1,5 @@
+ChannelAdminLogEventActionDefaultBannedRights
+=============================================
+
+.. autoclass:: pyrogram.api.types.ChannelAdminLogEventActionDefaultBannedRights
+    :members:

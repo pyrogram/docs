@@ -1,0 +1,5 @@
+UploadWallPaper
+===============
+
+.. autoclass:: pyrogram.api.functions.account.UploadWallPaper
+    :members:

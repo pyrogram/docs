@@ -1,0 +1,5 @@
+InputWallPaperSlug
+==================
+
+.. autoclass:: pyrogram.api.types.InputWallPaperSlug
+    :members:

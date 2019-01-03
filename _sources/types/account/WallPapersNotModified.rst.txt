@@ -1,0 +1,5 @@
+WallPapersNotModified
+=====================
+
+.. autoclass:: pyrogram.api.types.account.WallPapersNotModified
+    :members:

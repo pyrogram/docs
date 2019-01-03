@@ -1,0 +1,5 @@
+EditChatDefaultBannedRights
+===========================
+
+.. autoclass:: pyrogram.api.functions.messages.EditChatDefaultBannedRights
+    :members:

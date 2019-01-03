@@ -1,0 +1,35 @@
+Channels
+========
+
+.. module:: pyrogram.api.functions.channels
+
+.. toctree::
+    CheckUsername
+    CreateChannel
+    DeleteChannel
+    DeleteHistory
+    DeleteMessages
+    DeleteUserHistory
+    EditAdmin
+    EditBanned
+    EditPhoto
+    EditTitle
+    ExportMessageLink
+    GetAdminLog
+    GetAdminedPublicChannels
+    GetChannels
+    GetFullChannel
+    GetLeftChannels
+    GetMessages
+    GetParticipant
+    GetParticipants
+    InviteToChannel
+    JoinChannel
+    LeaveChannel
+    ReadHistory
+    ReadMessageContents
+    ReportSpam
+    SetStickers
+    TogglePreHistoryHidden
+    ToggleSignatures
+    UpdateUsername

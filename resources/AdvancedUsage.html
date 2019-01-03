@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Usage &mdash; Pyrogram Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.pyrogram.ml/resources/AdvancedUsage.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Voice Calls" href="VoiceCalls.html" />
+    <link rel="prev" title="Test Servers" href="TestServers.html" />
+    <meta property="og:title" content="Welcome to Pyrogram — Pyrogram Documentation">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/4E0uKSE.png">
+    <meta property="og:url" content="https://docs.pyrogram.ml">
+    <meta property="og:description" content="Telegram MTProto API Client Library for Python">
+    <meta property="og:site_name" content="Pyrogram">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="description" content="Telegram MTProto API Client Library for Python">
+    <meta name="theme-color" content="#5c5a55">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto+Slab:400" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84734363-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84734363-2');
+    </script>
+
+  
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                version 0.12.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#install-pyrogram">Install Pyrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#bleeding-edge">Bleeding Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#asynchronous">Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Installation.html#verifying">Verifying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#user-authorization">User Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/Setup.html#bot-authorization">Bot Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../start/Usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/Usage.html#high-level-api">High-level API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="UpdateHandling.html">Update Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#registering-an-handler">Registering an Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#using-add-handler">Using add_handler()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateHandling.html#using-decorators">Using Decorators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="UsingFilters.html">Using Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UsingFilters.html#combining-filters">Combining Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingFilters.html#advanced-filters">Advanced Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingFilters.html#custom-filters">Custom Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UsingFilters.html#basic-filters">Basic Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UsingFilters.html#filters-with-arguments">Filters with Arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MoreOnUpdates.html">More on Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="MoreOnUpdates.html#handler-groups">Handler Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MoreOnUpdates.html#update-propagation">Update propagation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MoreOnUpdates.html#stop-propagation">Stop Propagation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MoreOnUpdates.html#continue-propagation">Continue Propagation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ConfigurationFile.html">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ConfigurationFile.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConfigurationFile.html#the-config-ini-file">The config.ini File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConfigurationFile.html#configuration-sections">Configuration Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ConfigurationFile.html#pyrogram">Pyrogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConfigurationFile.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConfigurationFile.html#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SmartPlugins.html">Smart Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SmartPlugins.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartPlugins.html#using-smart-plugins">Using Smart Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartPlugins.html#specifying-the-plugins-to-include">Specifying the Plugins to include</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartPlugins.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartPlugins.html#load-unload-plugins-at-runtime">Load/Unload Plugins at Runtime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartPlugins.html#unloading">Unloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartPlugins.html#loading">Loading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AutoAuthorization.html">Auto Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#log-in">Log In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoAuthorization.html#sign-up">Sign Up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CustomizeSessions.html">Customize Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-values">Set Custom Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomizeSessions.html#set-custom-languages">Set Custom Languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TgCrypto.html">Fast Crypto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TgCrypto.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TextFormatting.html">Text Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#markdown-style">Markdown Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#html-style">HTML Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextFormatting.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SOCKS5Proxy.html">SOCKS5 Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SOCKS5Proxy.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BotsInteraction.html">Bots Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BotsInteraction.html#inline-bots">Inline Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandling.html">Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ErrorHandling.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TestServers.html">Test Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TestServers.html#test-mode-in-official-apps">Test Mode in Official Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestServers.html#test-numbers">Test Numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telegram-raw-api">Telegram Raw API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#invoking-functions">Invoking Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-ids">Chat IDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="VoiceCalls.html">Voice Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Package</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyrogram/index.html">Pyrogram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Client.html">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#utilities">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#decorators">Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#chats">Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#password">Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Client.html#bots">Bots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Types.html">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#users-chats">Users &amp; Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#messages-media">Messages &amp; Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#bots">Bots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#input-media">Input Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyrogram/Types.html#inputmessagecontent">InputMessageContent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Handlers.html">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/Filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ChatAction.html">ChatAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/ParseMode.html">ParseMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyrogram/RPCError.html">RPCError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../errors/SeeOther.html">303 - See Other</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/BadRequest.html">400 - Bad Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Unauthorized.html">401 - Unauthorized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Forbidden.html">403 - Forbidden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/NotAcceptable.html">406 - Not Acceptable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/Flood.html">420 - Flood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/InternalServerError.html">500 - Internal Server Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../errors/UnknownError.html">520 - Unknown Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Telegram API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Types</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="https://github.com/pyrogram/pyrogram" rel="nofollow" class="fa fa-github"> View on GitHub</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<p>Pyrogram’s API, which consists of well documented convenience <a class="reference external" href="../pyrogram/Client.html#messages">methods</a> and facade <a class="reference external" href="../pyrogram/Types.html">types</a>, exists to provide a much
+easier interface to the undocumented and often confusing Telegram API.</p>
+<p>In this section, you’ll be shown the alternative way of communicating with Telegram using Pyrogram: the main “raw”
+Telegram API with its functions and types.</p>
+<div class="section" id="telegram-raw-api">
+<h2>Telegram Raw API<a class="headerlink" href="#telegram-raw-api" title="Permalink to this headline">¶</a></h2>
+<p>If you can’t find a high-level method for your needs or if you want complete, low-level access to the whole
+Telegram API, you have to use the raw <a class="reference internal" href="../functions/index.html#module-pyrogram.api.functions" title="pyrogram.api.functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functions</span></code></a> and <a class="reference internal" href="../types/index.html#module-pyrogram.api.types" title="pyrogram.api.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>.</p>
+<p>As already hinted, raw functions and types can be really confusing, mainly because people don’t realize soon enough they
+accept <em>only</em> the right types and that all required parameters must be filled in. This section will therefore explain
+some pitfalls to take into consideration when working with the raw API.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Every available high-level methods in Pyrogram is built on top of these raw functions.</p>
+<p>Nothing stops you from using the raw functions only, but they are rather complex and <a class="reference external" href="../pyrogram/Client.html#messages">plenty of them</a> are already
+re-implemented by providing a much simpler and cleaner interface which is very similar to the Bot API (yet much more
+powerful).</p>
+<p class="last">If you think a raw function should be wrapped and added as a high-level method, feel free to ask in our <a class="reference external" href="https://t.me/PyrogramChat">Community</a>!</p>
+</div>
+<div class="section" id="invoking-functions">
+<h3>Invoking Functions<a class="headerlink" href="#invoking-functions" title="Permalink to this headline">¶</a></h3>
+<p>Unlike the <a class="reference external" href="../pyrogram/Client.html#messages">methods</a> found in Pyrogram’s API, which can be called in the usual simple way, functions to be invoked from
+the raw Telegram API have a different way of usage and are more complex.</p>
+<p>First of all, both <a class="reference external" href="../pyrogram/functions">raw functions</a> and <a class="reference external" href="../pyrogram/types">raw types</a> live in their respective packages (and sub-packages):
+<code class="docutils literal notranslate"><span class="pre">pyrogram.api.functions</span></code>, <code class="docutils literal notranslate"><span class="pre">pyrogram.api.types</span></code>. They all exist as Python classes, meaning you need to create an
+instance of each every time you need them and fill them in with the correct values using named arguments.</p>
+<p>Next, to actually invoke the raw function you have to use the <a class="reference internal" href="../pyrogram/Client.html#pyrogram.Client.send" title="pyrogram.Client.send"><code class="xref py py-meth docutils literal notranslate"><span class="pre">send()</span></code></a> method provided by
+the Client class and pass the function object you created.</p>
+<p>Here’s some examples:</p>
+<ul>
+<li><p class="first">Update first name, last name and bio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.api</span> <span class="kn">import</span> <span class="n">functions</span>
+
+<span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">UpdateProfile</span><span class="p">(</span>
+            <span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;Dan&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Tès&quot;</span><span class="p">,</span>
+            <span class="n">about</span><span class="o">=</span><span class="s2">&quot;Bio written from Pyrogram&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Disable links to your account when someone forwards your messages:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.api</span> <span class="kn">import</span> <span class="n">functions</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">SetPrivacy</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">PrivacyKeyForwards</span><span class="p">(),</span>
+            <span class="n">rules</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">InputPrivacyValueDisallowAll</span><span class="p">()]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Invite users to your channel/supergroup:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.api</span> <span class="kn">import</span> <span class="n">functions</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">InviteToChannel</span><span class="p">(</span>
+            <span class="n">channel</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">resolve_peer</span><span class="p">(</span><span class="mi">123456789</span><span class="p">),</span>  <span class="c1"># ID or Username</span>
+            <span class="n">users</span><span class="o">=</span><span class="p">[</span>  <span class="c1"># The users you want to invite</span>
+                <span class="n">app</span><span class="o">.</span><span class="n">resolve_peer</span><span class="p">(</span><span class="mi">23456789</span><span class="p">),</span>  <span class="c1"># By ID</span>
+                <span class="n">app</span><span class="o">.</span><span class="n">resolve_peer</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">),</span>  <span class="c1"># By username</span>
+                <span class="n">app</span><span class="o">.</span><span class="n">resolve_peer</span><span class="p">(</span><span class="s2">&quot;+393281234567&quot;</span><span class="p">),</span>  <span class="c1"># By phone number</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="chat-ids">
+<h3>Chat IDs<a class="headerlink" href="#chat-ids" title="Permalink to this headline">¶</a></h3>
+<p>The way Telegram works makes it impossible to directly send a message to a user or a chat by using their IDs only.
+Instead, a pair of <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> wrapped in a so called <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> is always needed. Pyrogram allows
+sending messages with IDs only thanks to cached access hashes.</p>
+<p>There are three different InputPeer types, one for each kind of Telegram entity.
+Whenever an InputPeer is needed you must pass one of these:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://docs.pyrogram.ml/types/InputPeerUser">InputPeerUser</a> - Users</li>
+<li><a class="reference external" href="https://docs.pyrogram.ml/types/InputPeerChat">InputPeerChat</a> -  Basic Chats</li>
+<li><a class="reference external" href="https://docs.pyrogram.ml/types/InputPeerChannel">InputPeerChannel</a> - Either Channels or Supergroups</li>
+</ul>
+</div></blockquote>
+<p>But you don’t necessarily have to manually instantiate each object because, luckily for you, Pyrogram already provides
+<a class="reference internal" href="../pyrogram/Client.html#pyrogram.Client.resolve_peer" title="pyrogram.Client.resolve_peer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resolve_peer()</span></code></a> as a convenience utility method that returns the correct InputPeer
+by accepting a peer ID only.</p>
+<p>Another thing to take into consideration about chat IDs is the way they are represented: they are all integers and
+all positive within their respective raw types.</p>
+<p>Things are different when working with Pyrogram’s API because having them in the same space can theoretically lead to
+collisions, and that’s why Pyrogram (as well as the official Bot API) uses a slightly different representation for each
+kind of ID.</p>
+<p>For example, given the ID <em>123456789</em>, here’s how Pyrogram can tell entities apart:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">+ID</span></code> User: <em>123456789</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">-ID</span></code> Chat: <em>-123456789</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">-100ID</span></code> Channel (and Supergroup): <em>-100123456789</em></li>
+</ul>
+</div></blockquote>
+<p>So, every time you take a raw ID, make sure to translate it into the correct ID when you want to use it with an
+high-level method.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="VoiceCalls.html" class="btn btn-neutral float-right" title="Voice Calls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="TestServers.html" class="btn btn-neutral" title="Test Servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    <div>
+      <b><a href="https://github.com/pyrogram/pyrogram">Pyrogram</a></b> documentation
+      &copy; Copyright 2017-2019, Dan Tès
+    </div>
+    <p>
+      Licensed under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'version 0.12.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enable();
+          
+      });
+  </script> 
+
+</body>
+</html>

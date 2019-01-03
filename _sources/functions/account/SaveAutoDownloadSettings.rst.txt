@@ -1,0 +1,5 @@
+SaveAutoDownloadSettings
+========================
+
+.. autoclass:: pyrogram.api.functions.account.SaveAutoDownloadSettings
+    :members:

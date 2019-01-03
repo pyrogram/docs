@@ -1,0 +1,5 @@
+GetEmojiKeywordsDifference
+==========================
+
+.. autoclass:: pyrogram.api.functions.messages.GetEmojiKeywordsDifference
+    :members:

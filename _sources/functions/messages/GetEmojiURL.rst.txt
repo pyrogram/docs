@@ -1,0 +1,5 @@
+GetEmojiURL
+===========
+
+.. autoclass:: pyrogram.api.functions.messages.GetEmojiURL
+    :members:

@@ -1,0 +1,5 @@
+SaveWallPaper
+=============
+
+.. autoclass:: pyrogram.api.functions.account.SaveWallPaper
+    :members:

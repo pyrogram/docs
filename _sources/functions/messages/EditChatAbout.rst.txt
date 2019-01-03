@@ -1,0 +1,5 @@
+EditChatAbout
+=============
+
+.. autoclass:: pyrogram.api.functions.messages.EditChatAbout
+    :members:

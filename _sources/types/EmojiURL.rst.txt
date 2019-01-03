@@ -1,0 +1,5 @@
+EmojiURL
+========
+
+.. autoclass:: pyrogram.api.types.EmojiURL
+    :members:

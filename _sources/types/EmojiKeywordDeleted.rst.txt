@@ -1,0 +1,5 @@
+EmojiKeywordDeleted
+===================
+
+.. autoclass:: pyrogram.api.types.EmojiKeywordDeleted
+    :members:

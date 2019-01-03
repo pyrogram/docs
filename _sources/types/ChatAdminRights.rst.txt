@@ -1,0 +1,5 @@
+ChatAdminRights
+===============
+
+.. autoclass:: pyrogram.api.types.ChatAdminRights
+    :members:

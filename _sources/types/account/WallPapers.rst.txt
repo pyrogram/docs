@@ -1,0 +1,5 @@
+WallPapers
+==========
+
+.. autoclass:: pyrogram.api.types.account.WallPapers
+    :members:

@@ -1,0 +1,5 @@
+AutoDownloadSettings
+====================
+
+.. autoclass:: pyrogram.api.types.AutoDownloadSettings
+    :members:

@@ -1,0 +1,5 @@
+ChannelAdminLogEventActionStopPoll
+==================================
+
+.. autoclass:: pyrogram.api.types.ChannelAdminLogEventActionStopPoll
+    :members:
